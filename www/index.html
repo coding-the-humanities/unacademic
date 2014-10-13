@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="lib/vendor.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+    <script src="app/profile.js"></script>
+  </head>
+  <body ng-app="unacademic">
+
+    <ion-pane>
+      <ion-header-bar class="bar-positive">
+        <h1 class="title">UnAcademic</h1>
+      </ion-header-bar>
+      <ion-content class="padding-horizontal" ng-controller="profile as profile">
+        <button ng-hide="currentUser" class="button button-block button-outline button-assertive" ng-click="profile.signIn()">
+          <i class="ion-social-github"> </i>Sign In
+        </button>
+        <button ng-hide="currentUser" class="button button-block button-outline button-assertive" ng-click="profile.signOut()">
+          <i class="ion-social-github"> </i>Sign Out
+        </button>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
