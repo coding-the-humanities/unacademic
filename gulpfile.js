@@ -7,14 +7,18 @@ var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 var karma = require('karma').server;
+var jshint = require('gulp-jshint');
 
 var paths = {
+  scripts: './www/app/**/*.js',
+  tests: './spec/**/*Spec.js',
   sass: ['./scss/**/*.scss']
 };
 
 var vendor = [
   'bower_components/firebase/firebase.js',
   'bower_components/angularfire/dist/angularfire.js',
+  'bower_components/angular-filter/dist/angular-filter.js',
   'bower_components/firebase-simple-login/firebase-simple-login.js'
 ];
 
@@ -30,6 +34,11 @@ var testLibs = [
   'bower_components/ionic/js/ionic-angular.min.js',
 ];
 
+gulp.task('lint', function() {
+  gulp.src([paths.scripts, paths.tests])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
 
 gulp.task('concatVendorLibs', function(){
   gulp.src(vendor)
@@ -40,7 +49,7 @@ gulp.task('concatVendorLibs', function(){
 gulp.task('concatTestLibs', function(){
   gulp.src(testLibs)
     .pipe(concat('testLibs.js', {newLine: '\n\n\n'}))
-    .pipe(gulp.dest('test/'));
+    .pipe(gulp.dest('spec/'));
 });
 
 gulp.task('copyIonic', function(done){
@@ -51,6 +60,7 @@ gulp.task('copyIonic', function(done){
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch([paths.scripts, paths.tests], ['lint', 'test']);
 });
 
 gulp.task('test', function (done) {

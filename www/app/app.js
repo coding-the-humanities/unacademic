@@ -1,10 +1,11 @@
 (function(){
   var app = angular.module('unacademic', [
     'ionic',
-    'firebase'
+    'firebase',
+    'angular.filter'
   ]);
 
-  app.value('FIREBASE_REF','https://mobile-app.firebaseio.com/')
+  app.value('FIREBASE_REF','https://mobile-app.firebaseio.com/');
   app.value('userSession',{});
 
   app.run(function($ionicPlatform, $rootScope, userSession) {
@@ -28,5 +29,5 @@
 
     $rootScope.$on('$firebaseSimpleLogin:logout', function(event) {
     });
-  })
+  });
 })();
