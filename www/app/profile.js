@@ -1,7 +1,7 @@
 (function(){
   var app = angular.module('unacademic');
 
-  app.controller('Profile', function($scope, authentication, currentUser){
+  app.controller('Profile', function(authentication, currentUser){
 
     var vm = this;
 
