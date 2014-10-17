@@ -19,6 +19,10 @@ module.exports = function(config) {
       'www/lib/vendor.js',
       'www/app/app.js',
       'www/app/profile.js',
+      'www/app/objectives.js',
+      'www/app/users.js',
+      'www/app/user.js',
+      'www/app/authentication.js',
       'spec/**/*Spec.js'
     ],
 

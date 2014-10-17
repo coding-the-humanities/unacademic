@@ -1,4 +1,4 @@
-describe("Profile Controller", function () {
+xdescribe("Profile Controller", function () {
 
   var userSession, ctrl, $timeout;
 
@@ -10,8 +10,7 @@ describe("Profile Controller", function () {
       $scope = $rootScope.$new();
       $timeout = _$timeout_;
 
-      vm = $controller("Profile", {
-      });
+      vm = $controller("Profile");
     });
   });
 
@@ -23,27 +22,16 @@ describe("Profile Controller", function () {
         vm.signIn();
         expect(vm.profile).toBeDefined();
       });
-
-      it("gets the user objectives", function() {
-        expect(vm.objectives).not.toBeDefined();
-        vm.signIn();
-        expect(vm.objectives).toBeDefined();
-      });
-
     });
 
-    describe("on sign in", function(){
+    describe("on sign out", function(){
       beforeEach(function(){
         vm.signIn();
         vm.signOut();
       });
 
-      it("erases the users profile", function() {
+      it("removes the users profile from the vm", function() {
         expect(vm.profile).not.toBeDefined();
-      });
-
-      it("erases the users objective", function() {
-        expect(vm.objectives).not.toBeDefined();
       });
     });
   });

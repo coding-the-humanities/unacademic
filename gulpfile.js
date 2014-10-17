@@ -27,6 +27,7 @@ var testLibs = [
   'bower_components/angular-animate/angular-animate.js',
   'bower_components/angular-cookies/angular-cookies.js',
   'bower_components/angular-mocks/angular-mocks.js',
+  'bower_components/sinon/index.js',
   'bower_components/angular-sanitize/angular-sanitize.min.js',
   'bower_components/angular-touch/angular-touch.min.js',
   'bower_components/angular-ui-router/release/angular-ui-router.js',

@@ -18,22 +18,30 @@
     <!-- your app's js -->
     <script src="app/app.js"></script>
     <script src="app/profile.js"></script>
+    <script src="app/objectives.js"></script>
+    <script src="app/authentication.js"></script>
+    <script src="app/users.js"></script>
+    <script src="app/user.js"></script>
+    <script src="app/login.js"></script>
   </head>
+
   <body ng-app="unacademic">
+    <ion-tabs class="tabs-positive tabs-icon-only">
+      <ion-tab title="Home" ng-controller="Profile as vm" icon-on="ion-ios7-filing" icon-off="ion-ios7-filing-outline">
+        <ion-header-bar class="bar-positive">
+          <h1 class="title">{{ vm.pageTitle }}</h1>
+        </ion-header-bar>
 
-    <ion-pane ng-controller="Profile as vm">
-      <ion-header-bar class="bar-positive">
-      <h1 class="title">{{ vm.pageTitle }}</h1>
-      </ion-header-bar>
-
-      <ion-content class="padding-horizontal">
-        <div ng-show="vm.profile">
-          <section class="profile list card">
+        <ion-content class="padding-horizontal">
+          <button ng-hide="vm.user.id" id="sign-in" class="button button-block button-assertive" ng-click="vm.signIn()()">
+            <i class="ion-social-github"> </i>Sign In
+          </button>
+          <section ng-show="vm.user.profile" class="profile list card">
 
             <div class="item item-avatar">
               <img src="http://calitreview.com/images/Rembrandt_Sheet%20of%20Studies%20with%20Self-Portrait_Rijksmuseum_7.jpg">
-              <h2 class="profile-id">{{ vm.profile.id }}</h2>
-              <h3>{{ vm.profile.role }}</h3>
+              <h2 class="profile-id">{{ vm.user.profile.id }}</h2>
+              <h3>{{ vm.user.profile.role }}</h3>
             </div>
 
             <div class="item item-body">
@@ -42,20 +50,37 @@
 
             <a href="#" class="item item-icon-left">
               <i class="icon ion-person assertive"></i>
-              {{ vm.profile.name.full}}
+              {{ vm.user.profile.name.full}}
             </a>
             <a href="#" class="item item-icon-left">
               <i class="icon ion-ios7-speedometer assertive"></i>
-              Level: {{ vm.profile.level }}
+              Level: {{ vm.user.profile.level }}
             </a>
             <a href="#" class="item item-icon-left">
               <i class="icon ion-ios7-bookmarks assertive"></i>
-              {{ vm.profile.study }}
+              {{ vm.user.profile.study }}
             </a>
+            <button id="sign-out" class="button button-block button-assertive" ng-click="vm.signOut()()">
+              <i class="ion-social-github"> </i>Sign Out
+            </button>
+          </section>
+        </ion-content>
+      </ion-tab>
 
-            <section class="level" ng-repeat="(key, value) in vm.objectives | groupBy: 'level'">
+      <ion-tab title="About" ng-controller="Profile as vm" icon-on="ion-ios7-clock" icon-off="ion-ios7-clock-outline">
+        <ion-header-bar class="bar-positive">
+          <h1 class="title">{{ vm.pageTitle }}</h1>
+        </ion-header-bar>
+        <ion-content class="padding-horizontal">
+
+          <button ng-hide="vm.user.id" id="sign-in" class="button button-block button-assertive" ng-click="vm.signIn()()">
+            <i class="ion-social-github"> </i>Sign In
+          </button>
+          <section ng-show="vm.user.objectives" class="profile list card">
+
+            <section class="level" ng-repeat="(key, value) in vm.user.objectives | groupBy: 'level'">
               <ion-item class="item-divider">
-                Level {{ key }}
+              Level {{ key }}
               </ion-item>
               <ion-item class="item-icon-right" ng-repeat="objective in value">
                 <div ng-click="objectives.goHome(objective.id)">
@@ -64,18 +89,9 @@
                 <i ng-show="objective.completed" class="icon ion-checkmark-round balanced"></i>
               </ion-item>
             </section>
-
-            <button ng-show="vm.profile" id="sign-out" class="button button-block button-positive" ng-click="vm.signOut()()">
-              <i class="ion-social-github"> </i>Sign Out
-            </button>
           </section>
-
-        </div>
-
-        <button ng-hide="vm.profile" id="sign-in" class="button button-block button-assertive" ng-click="vm.signIn()">
-          <i class="ion-social-github"> </i>Sign In
-        </button>
-      </ion-content>
-    </ion-pane>
+        </ion-content>
+      </ion-tab>
+    </ion-tabs>
   </body>
 </html>
