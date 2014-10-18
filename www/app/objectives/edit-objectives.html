@@ -1,12 +1,9 @@
 <ion-view title="Objectives">
   <ion-content class="padding-horizontal">
 
-    <button ng-hide="vm.user.id" id="sign-in" class="button button-block button-assertive" ng-click="vm.signIn()()">
-      <i class="ion-social-github"> </i>Sign In
-    </button>
+    <section ng-show="objectives.all" class="profile list card">
 
-    <section ng-show="vm.user.objectives" class="profile list card">
-      <section class="level" ng-repeat="(key, value) in vm.user.objectives | groupBy: 'level'">
+      <section class="level" ng-repeat="(key, value) in objectives.all | groupBy: 'level'">
         <ion-item class="item-divider">
         Level {{ key }}
         </ion-item>
@@ -18,6 +15,4 @@
         </ion-item>
       </section>
     </section>
-
-  </ion-content>
 </ion-view>

@@ -1,21 +1,30 @@
 (function(){
   var app = angular.module('unacademic');
 
-  app.controller('Profile', function($scope, authentication, currentUser){
+  app.controller('Profile', function(authentication, user){
 
     var vm = this;
 
-    vm.pageTitle = "Profile";
-    vm.user = currentUser;
+    vm.signIn = signIn;
+    vm.signOut = signOut;
 
-    vm.signIn = function(){
-      authentication.signIn();
-    };
-
-    vm.signOut = function(){
-      authentication.signOut();
-    };
+    setObjectKeysToVM(user.profile);
 
     return vm;
+
+    function signIn(){
+      authentication.signIn();
+    }
+
+    function signOut(){
+      authentication.signOut();
+    }
+
+    function setObjectKeysToVM(profile){
+      var keys = Object.keys(profile);
+      keys.forEach(function(key){
+        vm[key] = profile[key];
+      });
+    }
   });
 })();

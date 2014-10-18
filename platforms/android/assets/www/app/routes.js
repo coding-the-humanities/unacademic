@@ -37,20 +37,20 @@
       abstract: true,
       views: {
         objectives: {
-          templateUrl: './app/objectives/objectives.html'
+          templateUrl: './app/objectives.html'
         }
       }
     });
 
     $stateProvider.state('app.objectives.user', {
       url: '/user',
-      templateUrl: './app/objectives/user-objectives.html',
+      templateUrl: './app/user-objectives.html',
       controller: "UserObjectives as objectives"
     });
 
     $stateProvider.state('app.objectives.edit', {
       url: '/edit',
-      templateUrl: './app/objectives/edit-objectives.html',
+      templateUrl: './app/edit-objectives.html',
       controller: "EditObjectives as objectives",
       resolve: {
         objectives: function(objectives){

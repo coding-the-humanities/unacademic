@@ -1,4 +1,4 @@
-describe("Profile Controller", function () {
+describe("Signin Controller", function () {
 
   var ctrl, $timeout;
 
@@ -10,7 +10,7 @@ describe("Profile Controller", function () {
       $scope = $rootScope.$new();
       $timeout = _$timeout_;
 
-      vm = $controller("Profile", {
+      vm = $controller("Signin", {
         currentUser: {},
         authentication: {}
       });

@@ -1,7 +1,7 @@
 (function(){
   var app = angular.module('unacademic');
 
-  app.service('authentication', function(users, currentUser){
+  app.service('authentication', function(users, currentUser, $state){
     return {
       getCurrentUserId: getCurrentUserId,
       getCurrentUserProfile: getCurrentUserProfile,
@@ -15,7 +15,7 @@
     }
 
     function getCurrentUserProfile(){
-      return profile;
+      return currentUser.profile;
     }
 
     function getCurrentUserObjectives(){
@@ -24,15 +24,12 @@
 
     function signIn(){
       currentUser.id = "yeehaa123";
-      var user = users.getUser(currentUser.id);
-      currentUser.profile = user.profile;
-      currentUser.objectives= user.objectives;
+      $state.go('app.objectives.user');
     }
 
     function signOut(){
       currentUser.id= undefined;
-      currentUser.profile = undefined;
-      currentUser.objectives = undefined;
+      $state.go('signin');
     }
   });
 })();

@@ -1,9 +1,9 @@
 describe("Authentication Service", function(){
+  var stateGo;
 
   beforeEach(function () {
-    var mockUsers;
 
-    mockUsers = {
+    var mockUsers = {
       getUser: function(){
         return {
           profile: {},
@@ -12,9 +12,16 @@ describe("Authentication Service", function(){
       }
     };
 
+    var mockState = {
+      go: function(){}
+    };
+
+    stateGo = spyOn(mockState, 'go');
+
     module("unacademic", function($provide){
       $provide.value('users', mockUsers);
       $provide.value('currentUser', {});
+      $provide.value('$state', mockState);
     });
 
     inject(function($injector){
@@ -31,30 +38,22 @@ describe("Authentication Service", function(){
       expect(authentication.getCurrentUserId()).toEqual('yeehaa123');
     });
 
-    it("sets profile for the current user", function(){
-      expect(authentication.getCurrentUserProfile()).toBeDefined();
-    });
-
-    xit("sets objectives for the current user", function(){
-      expect(authentication.getCurrentUserObjectives()).toBeDefined();
+    it("transitions to the objectives page", function(){
+      expect(stateGo).toHaveBeenCalledWith('app.objectives.user');
     });
   });
 
-  xdescribe("signing out", function(){
+  describe("signing out", function(){
     beforeEach(function(){
       authentication.signOut();
     });
 
-    it("sets the currentUserId", function(){
+    it("removes the currentUserId", function(){
       expect(authentication.getCurrentUserId()).not.toBeDefined();
     });
 
-    it("sets profile for the current user", function(){
-      expect(authentication.getCurrentUserProfile()).not.toBeDefined();
-    });
-
-    it("sets objectives for the current user", function(){
-      expect(authentication.getCurrentUserObjectives()).not.toBeDefined();
+    it("transitions to the objectives page", function(){
+      expect(stateGo).toHaveBeenCalledWith('signin');
     });
   });
 });

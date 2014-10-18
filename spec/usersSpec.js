@@ -3,8 +3,15 @@ describe("Users Service", function(){
 
   beforeEach(function () {
 
+    function MockUser(){
+      return {
+        addObjective: function(){}
+      };
+    }
 
-    module("unacademic");
+    module("unacademic", function($provide){
+      $provide.value('User', MockUser);
+    });
 
     inject(function($injector){
       users = $injector.get('users');
@@ -21,11 +28,5 @@ describe("Users Service", function(){
     it("gets a user", function(){
       expect(user).toBeDefined();
     });
-
-    it("has a profile", function(){
-      expect(user.profile).toBeDefined();
-    });
-
-
   });
 });

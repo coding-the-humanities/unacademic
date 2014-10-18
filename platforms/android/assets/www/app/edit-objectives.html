@@ -1,0 +1,18 @@
+<ion-view title="Objectives">
+  <ion-content class="padding-horizontal">
+
+    <section ng-show="objectives.all" class="profile list card">
+
+      <section class="level" ng-repeat="(key, value) in objectives.all | groupBy: 'level'">
+        <ion-item class="item-divider">
+        Level {{ key }}
+        </ion-item>
+        <ion-item class="item-icon-right" ng-repeat="objective in value">
+        <div ng-click="objectives.goHome(objective.id)">
+          {{ objective.title }}
+        </div>
+        <i ng-show="objective.completed" class="icon ion-checkmark-round balanced"></i>
+        </ion-item>
+      </section>
+    </section>
+</ion-view>
