@@ -5,7 +5,6 @@
 
     var vm = this;
 
-    vm.pageTitle = "Profile";
     vm.user = currentUser;
 
     vm.signIn = function(){

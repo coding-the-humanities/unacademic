@@ -6,7 +6,7 @@ describe("Profile Controller", function () {
 
     module("unacademic");
 
-    inject(function ($rootScope, $controller, $q, _$timeout_) {
+    inject(function ($rootScope, $controller, _$timeout_) {
       $scope = $rootScope.$new();
       $timeout = _$timeout_;
 

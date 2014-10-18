@@ -1,0 +1,35 @@
+<ion-view title="Profile">
+  <ion-content class="padding-horizontal">
+    <button ng-hide="vm.user.id" id="sign-in" class="button button-block button-assertive" ng-click="vm.signIn()()">
+      <i class="ion-social-github"> </i>Sign In
+    </button>
+    <section ng-show="vm.user.profile" class="profile list card">
+
+      <div class="item item-avatar">
+        <img src="http://calitreview.com/images/Rembrandt_Sheet%20of%20Studies%20with%20Self-Portrait_Rijksmuseum_7.jpg">
+        <h2 class="profile-id">{{ vm.user.profile.id }}</h2>
+        <h3>{{ vm.user.profile.role }}</h3>
+      </div>
+
+      <div class="item item-body">
+        <img class="full-image" src="https://avatars.githubusercontent.com/u/1780358?v=2">
+      </div>
+
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-person assertive"></i>
+        {{ vm.user.profile.name.full}}
+      </a>
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-ios7-speedometer assertive"></i>
+        Level: {{ vm.user.profile.level }}
+      </a>
+      <a href="#" class="item item-icon-left">
+        <i class="icon ion-ios7-bookmarks assertive"></i>
+        {{ vm.user.profile.study }}
+      </a>
+      <button id="sign-out" class="button button-block button-assertive" ng-click="vm.signOut()()">
+        <i class="ion-social-github"> </i>Sign Out
+      </button>
+    </section>
+  </ion-content>
+</ion-view>
