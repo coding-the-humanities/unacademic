@@ -53,8 +53,14 @@
       templateUrl: './app/objectives/edit-objectives.html',
       controller: "EditObjectives as objectives",
       resolve: {
-        objectives: function(objectives){
-          return objectives.getObjectives();
+        objectives: function(objectives, currentUser, users){
+          var objectives = objectives.getObjectives();
+          var userObjectives = users.getUser(currentUser.id).objectives;
+          var keys = Object.keys(userObjectives);
+          keys.forEach(function(key){
+            objectives[key].added = true;
+          });
+          return objectives;
         }
       }
     });
