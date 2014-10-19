@@ -1,6 +1,20 @@
 (function(){
 
   var app = angular.module('unacademic');
+  var tasks = [
+    {
+      title: "Clean Up"
+    },
+    {
+      title: "Tidy Up"
+    },
+    {
+      title: "Do Dishes"
+    },
+    {
+      title: "Make the Bed"
+    }
+  ];
 
   var o = [
     {
@@ -67,9 +81,24 @@
       level = objective.level;
     }
 
+    var assignments = _.cloneDeep(tasks);
+    objective.assignments = assignments.map(function(task){
+      var random = function(){
+        var rand = Math.random() < 0.5;
+        return rand;
+      };
+
+      if(random()){
+        task.completed = true;
+      } else {
+        task.completed = false;
+      }
+      return task;
+    });
     objective.id = level + "_"  + objective.title;
     objectives[objective.id] = objective;
   });
+
 
 
   app.service('objectives', function(){

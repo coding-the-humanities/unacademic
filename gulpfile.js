@@ -8,9 +8,12 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 var karma = require('karma').server;
 var jshint = require('gulp-jshint');
+var traceur = require('gulp-traceur');
+
 
 var paths = {
   scripts: './www/app/**/*.js',
+  traceur: './www/app/**/*.es6',
   tests: './spec/**/*Spec.js',
   sass: ['./scss/**/*.scss']
 };
@@ -19,7 +22,8 @@ var vendor = [
   'bower_components/firebase/firebase.js',
   'bower_components/angularfire/dist/angularfire.js',
   'bower_components/angular-filter/dist/angular-filter.js',
-  'bower_components/firebase-simple-login/firebase-simple-login.js'
+  'bower_components/firebase-simple-login/firebase-simple-login.js',
+  'bower_components/lodash/dist/lodash.js'
 ];
 
 var testLibs = [
@@ -35,8 +39,18 @@ var testLibs = [
   'bower_components/ionic/js/ionic-angular.min.js',
 ];
 
+gulp.task('traceur', function () {
+  return gulp.src(paths.traceur)
+  .pipe(traceur({experimental: true}))
+  .pipe(rename({
+    suffix: '.compiled',
+    extname: '.js'
+  }))
+  .pipe(gulp.dest('./www/app'));
+});
+
 gulp.task('lint', function() {
-  gulp.src([paths.scripts, paths.tests])
+  gulp.src([paths.scripts, paths.tests, '!./www/app/**/*.compiled.js'])
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
@@ -59,9 +73,16 @@ gulp.task('copyIonic', function(done){
     .on('end', done);
 })
 
+gulp.task('copyTraceur', function(done){
+  gulp.src('bower_components/traceur-runtime/traceur-runtime.js')
+    .pipe(gulp.dest('www/lib/traceur-runtime'))
+    .on('end', done);
+})
+
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch([paths.scripts, paths.tests], ['lint', 'test']);
+  gulp.watch(paths.traceur, ['traceur']);
 });
 
 gulp.task('test', function (done) {

@@ -49,8 +49,15 @@
     });
 
     $stateProvider.state('app.objectives.detail', {
-      url: '/detail',
-      template: '<ion-view>HELLO</ion-view>'
+      url: '/:objectiveId',
+      templateUrl: './app/objectives/objectives-detail.html',
+      controller: "ObjectiveDetails as objective",
+      resolve: {
+        objective: function($stateParams, userObjectives, currentUser){
+          var objectiveId = $stateParams.objectiveId;
+          return userObjectives.getObjective(currentUser.id, objectiveId);
+        }
+      }
     });
 
     $stateProvider.state('app.objectives.edit', {
@@ -58,14 +65,8 @@
       templateUrl: './app/objectives/edit-objectives.html',
       controller: "EditObjectives as objectives",
       resolve: {
-        objectives: function(objectives, currentUser, users){
-          var objectives = objectives.getObjectives();
-          var userObjectives = users.getUser(currentUser.id).objectives;
-          var keys = Object.keys(userObjectives);
-          keys.forEach(function(key){
-            objectives[key].added = true;
-          });
-          return objectives;
+        objectives: function(userObjectives, currentUser){
+          return userObjectives.getAllObjectives(currentUser.id);
         }
       }
     });

@@ -2,7 +2,7 @@
 
   var objectives;
 
-  describe("Objectives Service", function(){
+  describe("userObjectives Service", function(){
 
     beforeEach(function () {
 
@@ -11,9 +11,8 @@
           return {
             objectives: {
               "000_HTML": {
-                id: "000_HTML",
                 added: true,
-                completed: true
+                completed: false
               }
 
             }
@@ -25,7 +24,7 @@
         getObjectives: function(){
           return {
             "000_HTML": {
-              id: "000_HTML"
+              title: "HTML"
             },
             "001_Polymer": {},
           };
@@ -75,12 +74,12 @@
         });
 
         it('has the right id', function(){
-          expect(objective.id).toEqual('000_HTML');
+          expect(objective.title).toEqual('HTML');
         });
 
         it('has all the properties of the general object', function(){
           expect(objective.added).toBeTruthy();
-          expect(objective.added).toBeTruthy();
+          expect(objective.completed).toBeDefined();
         });
       });
     });

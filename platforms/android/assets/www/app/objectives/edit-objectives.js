@@ -1,7 +1,7 @@
 (function(){
   var app = angular.module('unacademic');
 
-  app.controller('EditObjectives', function(authentication, user, objectives){
+  app.controller('EditObjectives', function(userObjectives, authentication, user, objectives){
 
     var vm = this;
 

@@ -56,6 +56,9 @@
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/signin.html \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/profile.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/data/objectives.js \
+/home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/data/user-objectives.js \
+/home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/objectives/objective-details.js \
+/home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/objectives/objectives-detail.html \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/objectives/user-objectives.html \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/objectives/objectives.html \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/objectives/edit-objectives.js \

@@ -49,8 +49,15 @@
     });
 
     $stateProvider.state('app.objectives.detail', {
-      url: '/detail',
-      template: '<ion-view>HELLO</ion-view>'
+      url: '/:objectiveId',
+      templateUrl: './app/objectives/objectives-detail.html',
+      controller: "ObjectiveDetails as objective",
+      resolve: {
+        objective: function($stateParams, userObjectives, currentUser){
+          var objectiveId = $stateParams.objectiveId;
+          return userObjectives.getObjective(currentUser.id, objectiveId);
+        }
+      }
     });
 
     $stateProvider.state('app.objectives.edit', {

@@ -1,0 +1,23 @@
+<ion-view title="{{objective.title}}">
+  <ion-content>
+  <div class="list card">
+    <div class="item item-divider">
+      <h1>{{ objective.title }}</h1>
+    </div>
+    <div class="item">
+      <h2>Level: {{ objective.level }}</h2>
+      <progress value={{objective.completion}} max=100></progress>
+    </div>
+    <div class="item item-divider">
+      <h2>Assignments</h2>
+    </div>
+    <div class="item item-checkbox" ng-repeat="assignment in objective.assignments">
+      <label class="checkbox">
+        <input ng-model="assignment.completed" type="checkbox">
+      </label>
+      {{assignment.title}}
+    </label>
+  </div>
+  </div>
+  </ion-content>
+</ion-view>

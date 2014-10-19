@@ -16,6 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'spec/testLibs.js',
+      'www/lib/traceur-runtime/traceur-runtime.js',
       'www/lib/vendor.js',
       'www/app/app.js',
       'www/app/profile.js',
@@ -27,8 +28,11 @@ module.exports = function(config) {
       'www/app/authentication.js',
       'www/app/Signin.js',
 
+      'www/app/objectives/objective.compiled.js',
       'www/app/objectives/user-objectives.js',
       'www/app/objectives/edit-objectives.js',
+      'www/app/objectives/objective-details.js',
+
       'spec/**/*Spec.js'
     ],
 
@@ -69,7 +73,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode

@@ -17,6 +17,8 @@
     "firebase": "~1.1.0",
     "angularfire": "~0.8.2",
     "firebase-simple-login": "~1.6.4",
-    "angular-filter": "~0.4.9"
+    "angular-filter": "~0.4.9",
+    "lodash": "~2.4.1",
+    "traceur-runtime": "~0.0.66"
   }
 }
