@@ -1,6 +1,6 @@
 (function(){
 
-  app = angular.module('unacademic');
+  var app = angular.module('unacademic');
 
   var o = [
     {

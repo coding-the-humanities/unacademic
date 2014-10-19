@@ -48,19 +48,18 @@
       controller: "UserObjectives as objectives"
     });
 
+    $stateProvider.state('app.objectives.detail', {
+      url: '/detail',
+      template: '<ion-view>HELLO</ion-view>'
+    });
+
     $stateProvider.state('app.objectives.edit', {
       url: '/edit',
       templateUrl: './app/objectives/edit-objectives.html',
       controller: "EditObjectives as objectives",
       resolve: {
-        objectives: function(objectives, currentUser, users){
-          var objectives = objectives.getObjectives();
-          var userObjectives = users.getUser(currentUser.id).objectives;
-          var keys = Object.keys(userObjectives);
-          keys.forEach(function(key){
-            objectives[key].added = true;
-          });
-          return objectives;
+        objectives: function(userObjectives, currentUser){
+          return userObjectives.getAllObjectives(currentUser.id);
         }
       }
     });

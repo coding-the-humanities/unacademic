@@ -37,24 +37,35 @@
       abstract: true,
       views: {
         objectives: {
-          templateUrl: './app/objectives.html'
+          templateUrl: './app/objectives/objectives.html'
         }
       }
     });
 
     $stateProvider.state('app.objectives.user', {
       url: '/user',
-      templateUrl: './app/user-objectives.html',
+      templateUrl: './app/objectives/user-objectives.html',
       controller: "UserObjectives as objectives"
+    });
+
+    $stateProvider.state('app.objectives.detail', {
+      url: '/detail',
+      template: '<ion-view>HELLO</ion-view>'
     });
 
     $stateProvider.state('app.objectives.edit', {
       url: '/edit',
-      templateUrl: './app/edit-objectives.html',
+      templateUrl: './app/objectives/edit-objectives.html',
       controller: "EditObjectives as objectives",
       resolve: {
-        objectives: function(objectives){
-          return objectives.getObjectives();
+        objectives: function(objectives, currentUser, users){
+          var objectives = objectives.getObjectives();
+          var userObjectives = users.getUser(currentUser.id).objectives;
+          var keys = Object.keys(userObjectives);
+          keys.forEach(function(key){
+            objectives[key].added = true;
+          });
+          return objectives;
         }
       }
     });

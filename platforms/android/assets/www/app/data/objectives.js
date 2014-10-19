@@ -51,7 +51,7 @@
       title: "real time",
       level: 5
     }
-  ]
+  ];
 
   var objectives = {};
 

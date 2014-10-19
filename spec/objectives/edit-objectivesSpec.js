@@ -60,7 +60,7 @@ describe("Edit Objectives Controller", function () {
       objective = objectives.all[key];
     });
 
-    it("changes the added property to falsee on the objective", function(){
+    it("changes the added property to false on the objective", function(){
       expect(objective.added).toBeFalsy();
     });
 
@@ -68,5 +68,4 @@ describe("Edit Objectives Controller", function () {
       expect(removeObjectiveFromUser).toHaveBeenCalledWith(key);
     });
   });
-
 });
