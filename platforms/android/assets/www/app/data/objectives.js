@@ -84,9 +84,10 @@
     var assignments = _.cloneDeep(tasks);
     objective.assignments = assignments.map(function(task){
       var random = function(){
-        var rand = Math.random() < .5;
+        var rand = Math.random() < 0.5;
         return rand;
-      }
+      };
+
       if(random()){
         task.completed = true;
       } else {
