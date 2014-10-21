@@ -105,10 +105,6 @@
   app.service('objectives', function(Objective){
     return {
       getObjectives: function(){
-        var keys = Object.keys(objectives);
-        keys.forEach(function(key){
-          objectives[key] = new Objective(objectives[key]);
-        });
         return objectives;
       }
     };

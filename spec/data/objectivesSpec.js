@@ -18,8 +18,6 @@
     describe("objects retrieval", function(){
       it("gets all objectives", function(){
         var objectives = service.getObjectives(); 
-        console.log(objectives[2]);
-        // expect(objectives[2] instanceof Objective).toBeTruthy();
       });
     });
   });
