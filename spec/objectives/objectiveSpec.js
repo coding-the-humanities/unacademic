@@ -2,7 +2,7 @@
 
   describe("Objective Service", function(){
 
-    var Objective;
+    var objective;
 
     beforeEach(function () {
 
@@ -30,8 +30,8 @@
       it("has the right properties", function(){
         expect(objective.title).toEqual("HTML");
         expect(objective.level).toEqual(0);
-        expect(objective.description).toContain("Hopsakidee");
-        expect(objective.tasks instanceof Task).toBeTruthy();
+        expect(objective.description).toContain("quinoa");
+        // expect(objective.tasks instanceof Task).toBeTruthy();
       });
 
       describe("points", function(){

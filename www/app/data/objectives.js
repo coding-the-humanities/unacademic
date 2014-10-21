@@ -1,6 +1,7 @@
 (function(){
 
   var app = angular.module('unacademic');
+
   var tasks = [
     {
       title: "Clean Up"
@@ -82,7 +83,7 @@
     }
 
     var assignments = _.cloneDeep(tasks);
-    objective.assignments = assignments.map(function(task){
+    objective.tasks = assignments.map(function(task){
       var random = function(){
         var rand = Math.random() < 0.5;
         return rand;
@@ -101,9 +102,13 @@
 
 
 
-  app.service('objectives', function(){
+  app.service('objectives', function(Objective){
     return {
       getObjectives: function(){
+        var keys = Object.keys(objectives);
+        keys.forEach(function(key){
+          objectives[key] = new Objective(objectives[key]);
+        });
         return objectives;
       }
     };

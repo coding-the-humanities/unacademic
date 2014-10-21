@@ -1,10 +1,14 @@
 (function() {
+  let fakeDesc = `Four loko leggings lomo biodiesel roof party, brunch umami banjo cray keytar mustache 90's Neutra Blue Bottle. Normcore roof party cornhole whatever selvage fap. Hella flannel narwhal wolf, mumblecore meh Blue Bottle Wes Anderson heirloom fanny pack Portland. Sustainable banh mi tote bag, fap try-hard Marfa deep v ethical tattooed tousled quinoa.`;
+
   class Objective {
-    constructor({title, level, points, description}){
+    constructor({title, level, points, description, tasks, resources}){
       this.title = title;
       this.level = level;
       this.points = points || 0;
-      this.description = description || "";
+      this.tasks = tasks;
+      this.resources = resources;
+      this.description = fakeDesc || "";
     }
 
     get id(){

@@ -1,19 +1,25 @@
 (function(){
   describe("Objectives Service", function(){
-    var objectives;
+    var service;
+    var Objective = function(){
+    };
 
     beforeEach(function () {
 
       module("unacademic");
 
       inject(function($injector){
-        objectives = $injector.get('objectives');
+        service = $injector.get('objectives', {
+          Objective: Objective 
+        });
       });
     });
 
     describe("objects retrieval", function(){
       it("gets all objectives", function(){
-        expect(objectives.getObjectives()).toBeDefined();
+        var objectives = service.getObjectives(); 
+        console.log(objectives[2]);
+        // expect(objectives[2] instanceof Objective).toBeTruthy();
       });
     });
   });
