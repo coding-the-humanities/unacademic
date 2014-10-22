@@ -21,4 +21,13 @@ describe("ObjectiveDetails Controller", function () {
   it("sets the objective", function(){
     expect(objective.title).toBeDefined();
   });
+
+  
+  it("shows the description by default", function(){
+    expect(objective.showDescription).toBeTruthy();
+  });
+
+  it("hides the description by default", function(){
+    expect(objective.tasks).toBeFalsy();
+  });
 });

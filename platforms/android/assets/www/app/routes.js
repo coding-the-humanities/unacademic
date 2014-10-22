@@ -53,9 +53,10 @@
       templateUrl: './app/objectives/objectives-detail.html',
       controller: "ObjectiveDetails as objective",
       resolve: {
-        objective: function($stateParams, userObjectives, currentUser){
+        objective: function($stateParams, userObjectives, currentUser, Objective){
           var objectiveId = $stateParams.objectiveId;
-          return userObjectives.getObjective(currentUser.id, objectiveId);
+          var objective = userObjectives.getObjective(currentUser.id, objectiveId);
+          return new Objective(objective);
         }
       }
     });
