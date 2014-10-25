@@ -5,7 +5,7 @@
   }
 
   class Objective {
-    constructor({title, level, points, description, tasks, resources}){
+    constructor({title, level, category, points, description, tasks, resources}){
       this.title = title;
       this.level = level;
       this.points = points || 0;
@@ -13,12 +13,27 @@
       this.description = fakeDesc || "";
       this.baseUrl = this.generateBaseUrl(this.title);
       this.url = this.generateUrl(this.baseUrl);
-    }
-
+      this.categories = {
+        "design":   "assertive",
+        "markup":   "positive",
+        "data":     "balanced",
+        "workflow": "energized",
+        "general":  "dark"
+      };
+      this.completion = 70,
+      this.category = this.checkCategory(category);
+      this.color = `${this.categories[this.category]}`;
+    };
+    
     get id(){
       let level = this.generateLevel(this.level);
       let title = this.generateTitle(this.title);
       return `${level}_${title}`;
+    }
+
+    checkCategory(category){
+      var allowedCategories = Object.keys(this.categories);
+      return allowedCategories.find((c) => c === category);
     }
      
     generateUrl(url){

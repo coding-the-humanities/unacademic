@@ -18,6 +18,8 @@
     "karma-chrome-launcher": "^0.1.5",
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4",
-    "shelljs": "^0.3.0"
+    "shelljs": "^0.3.0",
+    "gulp-angular-templatecache": "^1.4.2",
+    "karma-ng-html2js-preprocessor": "^0.1.2"
   }
 }

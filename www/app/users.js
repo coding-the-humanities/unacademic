@@ -31,6 +31,9 @@
        // Remove: Only for bootstrapping
        user.addObjective('000_HTML');
        user.addObjective('000_CSS');
+       user.addObjective('002_modularization');
+       user.addObjective('003_git');
+       user.addObjective('004_persistance');
 
        return user;
       }

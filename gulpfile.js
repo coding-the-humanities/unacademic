@@ -10,12 +10,14 @@ var karma = require('karma').server;
 var jshint = require('gulp-jshint');
 var traceur = require('gulp-traceur');
 
+var templateCache = require('gulp-angular-templatecache');
 
 var paths = {
   scripts: './www/app/**/*.js',
   traceur: './www/app/**/*.es6',
   tests: './spec/**/*Spec.js',
-  sass: ['./scss/**/*.scss']
+  sass: ['./scss/**/*.scss'],
+  html: './www/**/*.html'
 };
 
 var vendor = [
@@ -38,6 +40,12 @@ var testLibs = [
   'bower_components/ionic/js/ionic.js',
   'bower_components/ionic/js/ionic-angular.min.js',
 ];
+
+gulp.task('templates', function () {
+  gulp.src([paths.html, '!./www/index.html'])
+    .pipe(templateCache({standalone: true}))
+    .pipe(gulp.dest('www/app'));
+});
 
 gulp.task('traceur', function () {
   return gulp.src(paths.traceur)
@@ -83,6 +91,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
   gulp.watch([paths.scripts, paths.tests], ['lint', 'test']);
   gulp.watch(paths.traceur, ['traceur']);
+  gulp.watch(paths.html, ['templates']);
 });
 
 gulp.task('test', function (done) {

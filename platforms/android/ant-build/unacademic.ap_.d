@@ -29,6 +29,7 @@
 /home/yeehaa/Documents/unacademic/platforms/android/ant-build/res/drawable-port-hdpi/screen.png \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/_where-is-www.txt \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www \
+/home/yeehaa/Documents/unacademic/platforms/android/assets/www/templates.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/cordova.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/fonts \

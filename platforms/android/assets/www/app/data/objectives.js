@@ -20,27 +20,33 @@
   var o = [
     {
       level: 0,
-      title: "HTML"
+      title: "HTML",
+      category: "markup"
     },
     {
       level: 0,
-      title: "CSS"
+      title: "CSS",
+      category: "design"
     },
     {
       level: 0,
-      title: "Gists"
+      title: "Gists",
+      category: "workflow"
     },
     {
       level: 0,
-      title: "User Camera Study"
+      title: "User Camera Study",
+      category: "general"
     },
     {
       title: "simple script",
-      level: 2
+      level: 2,
+      category: "behavior"
     },
     {
       title: "code organization",
-      level: 2
+      level: 2,
+      category: "workflow"
     },
     {
       title: "modularization",
@@ -48,15 +54,18 @@
     },
     {
       title: "git",
-      level: 3
+      level: 3,
+      category: "workflow"
     },
     {
       title: "api's",
-      level: 4
+      level: 4,
+      category: "data"
     },
     {
       title: "persistance",
-      level: 4
+      level: 4,
+      category: "data"
     },
     {
       title: "forms",

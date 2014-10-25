@@ -8,6 +8,7 @@
     var $__2 = $__1,
         title = $__2.title,
         level = $__2.level,
+        category = $__2.category,
         points = $__2.points,
         description = $__2.description,
         tasks = $__2.tasks,
@@ -19,12 +20,27 @@
     this.description = fakeDesc || "";
     this.baseUrl = this.generateBaseUrl(this.title);
     this.url = this.generateUrl(this.baseUrl);
+    this.categories = {
+      "design": "assertive",
+      "markup": "positive",
+      "data": "balanced",
+      "workflow": "energized",
+      "general": "dark"
+    };
+    this.completion = 70, this.category = this.checkCategory(category);
+    this.color = ("" + this.categories[$traceurRuntime.toProperty(this.category)]);
   };
   ($traceurRuntime.createClass)(Objective, {
     get id() {
       var level = this.generateLevel(this.level);
       var title = this.generateTitle(this.title);
       return (level + "_" + title);
+    },
+    checkCategory: function(category) {
+      var allowedCategories = Object.keys(this.categories);
+      return allowedCategories.find((function(c) {
+        return c === category;
+      }));
     },
     generateUrl: function(url) {
       return (url + "/logo.svg");

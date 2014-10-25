@@ -20,8 +20,9 @@
         "workflow": "energized",
         "general":  "dark"
       };
+      this.completion = 70,
       this.category = this.checkCategory(category);
-      this.color = `item-${this.categories[this.category]}`;
+      this.color = `${this.categories[this.category]}`;
     };
     
     get id(){

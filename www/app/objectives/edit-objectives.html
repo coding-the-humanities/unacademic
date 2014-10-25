@@ -4,17 +4,17 @@
     <section ng-show="objectives.all" class="profile list card" ng-repeat="(key, value) in objectives.all | groupBy: 'level'">
 
       <section class="level">
-        <ion-item class="item-divider">
+        <ion-item class="item-divider item-dark">
         Level {{ key }}
         </ion-item>
         <ion-item class="item-icon-right" ng-repeat="objective in value">
           {{ objective.title }}
         </div>
         <div ng-hide="objective.added" ng-click="objectives.add(objective.id)">
-          <i class="icon ion-ios7-plus"></i>
+          <i class="icon ion-ios7-plus dark"></i>
         </div>
         <div ng-show="objective.added" ng-click="objectives.remove(objective.id)">
-          <i class="icon ion-ios7-minus"></i>
+          <i class="icon ion-ios7-minus dark"></i>
         </ion-item>
       </section>
     </section>

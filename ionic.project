@@ -1,5 +1,5 @@
 {
   "name": "unacademic",
   "app_id": "",
-  "gulpStartupTasks": ["traceur", "lint", "test", "sass", "watch"]
+  "gulpStartupTasks": ["traceur", "templates", "lint", "test", "sass", "watch"]
 }

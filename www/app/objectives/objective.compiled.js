@@ -27,8 +27,8 @@
       "workflow": "energized",
       "general": "dark"
     };
-    this.category = this.checkCategory(category);
-    this.color = ("item-" + this.categories[$traceurRuntime.toProperty(this.category)]);
+    this.completion = 70, this.category = this.checkCategory(category);
+    this.color = ("" + this.categories[$traceurRuntime.toProperty(this.category)]);
   };
   ($traceurRuntime.createClass)(Objective, {
     get id() {

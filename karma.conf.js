@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: 'www',
 
 
     // frameworks to use
@@ -15,25 +15,27 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'spec/testLibs.js',
-      'www/lib/traceur-runtime/traceur-runtime.js',
-      'www/lib/vendor.js',
-      'www/app/app.js',
-      'www/app/profile.js',
+      '../spec/testLibs.js',
+      'lib/traceur-runtime/traceur-runtime.js',
+      'lib/vendor.js',
+      'app/app.js',
+      'app/templates.js',
+      'app/profile.js',
 
-      'www/app/data/objectives.js',
-      'www/app/data/user-objectives.js',
-      'www/app/users.js',
-      'www/app/user.js',
-      'www/app/authentication.js',
-      'www/app/Signin.js',
+      'app/data/objectives.js',
+      'app/data/user-objectives.js',
+      'app/users.js',
+      'app/user.js',
+      'app/authentication.js',
+      'app/Signin.js',
 
-      'www/app/objectives/objective.compiled.js',
-      'www/app/objectives/user-objectives.js',
-      'www/app/objectives/edit-objectives.js',
-      'www/app/objectives/objective-details.js',
-
-      'spec/**/*Spec.js'
+      'app/objectives/objective.compiled.js',
+      'app/objectives/user-objectives.js',
+      'app/objectives/edit-objectives.js',
+      'app/objectives/objective-details.js',
+      'app/**/*.html',
+      'app/common/cards/card-section.js',
+      '../spec/**/*Spec.js'
     ],
 
 
@@ -45,6 +47,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      '**/*.html': ['ng-html2js']
     },
 
 

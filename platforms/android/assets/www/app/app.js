@@ -2,7 +2,8 @@
   var app = angular.module('unacademic', [
     'ionic',
     'firebase',
-    'angular.filter'
+    'angular.filter',
+    'templates'
   ]);
 
   app.value('FIREBASE_REF','https://mobile-app.firebaseio.com/');

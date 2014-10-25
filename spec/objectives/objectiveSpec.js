@@ -42,7 +42,7 @@
         });
 
         it("has the right color code", function(){
-          expect(objective.color).toEqual('positive');
+          expect(objective.color).toEqual('assertive');
         });
 
         it("has one out of five categories as a property", function(){
