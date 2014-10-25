@@ -5,10 +5,12 @@
 
     var vm = this;
 
+    vm.showDescription = false;
+    vm.showTasks = false;
+
     setObjectKeysToVM(objective);
 
     return vm;
-
 
     function setObjectKeysToVM(profile){
       var keys = Object.keys(profile);

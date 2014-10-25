@@ -24,7 +24,7 @@ describe("ObjectiveDetails Controller", function () {
 
   
   it("shows the description by default", function(){
-    expect(objective.showDescription).toBeTruthy();
+    expect(objective.showDescription).toBeFalsy();
   });
 
   it("hides the description by default", function(){

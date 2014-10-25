@@ -4,7 +4,8 @@
   app.controller('ObjectiveDetails', function(objective){
 
     var vm = this;
-    vm.showDescription = true;
+
+    vm.showDescription = false;
     vm.showTasks = false;
 
     setObjectKeysToVM(objective);

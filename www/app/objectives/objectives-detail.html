@@ -1,43 +1,52 @@
 <ion-view title="{{objective.title}}">
   <ion-content>
-  <div class="list card">
-    <div class="item item-divider">
-      <h1>{{ objective.title }}</h1>
-    </div>
-    <div class="item">
-      <h2>Level: {{ objective.level }}</h2>
-      <progress value={{objective.completion}} max=100></progress>
-    </div>
-    <div class="item item-divider item-icon-right" 
-         ng-click="objective.showDescription = !objective.showDescription">
-      <i ng-show="!objective.showDescription" class="icon ion-ios7-plus-empty"></i> 
-      <i ng-show="objective.showDescription" class="icon ion-ios7-minus-empty"></i> 
-      <h2>Description</h2>
-    </div>
-    <div ng-show="objective.showDescription" class="item item-text-wrap">
-      <p>{{objective.description}}</p>
-    </div>
-    <div class="item item-divider item-icon-right" 
-         ng-click="objective.showTasks = !objective.showTasks">
-      <i ng-show="!objective.showTasks" class="icon ion-ios7-plus-empty"></i> 
-      <i ng-show="objective.showTasks" class="icon ion-ios7-minus-empty"></i> 
-      <h2>Tasks</h2>
-    </div>
-    <div ng-repeat="task in objective.tasks" 
-         ng-show="objective.showTasks"
-         ng-click="task.showTask = !task.showTask">
-      <div class="item item-checkbox item-icon-right"> 
-        <i ng-show="!task.showTask" class="icon ion-ios7-plus-empty"></i> 
-        <i ng-show="task.showTask" class="icon ion-ios7-minus-empty"></i> 
-        <label class="checkbox">
-          <input ng-model="task.completed" type="checkbox">
-        </label>
-        {{task.title}}
+    <div class="list card">
+      <div ng-class="objective.color" class="item item-divider">
+        <h1 class="light">{{ objective.title }}</h1>
       </div>
-      <div ng-show="task.showTask" class="item item-text-wrap">
-        <p>{{objective.description}}</p>
+      <div class="item">
+        <img class="padding-horizontal full-image" ng-src="{{objective.url}}"></img>
+      </div>
+      <div class="item item-divider item-icon-right" 
+           ng-click="objective.showOverview = !objective.showOverview">
+        <i ng-show="!objective.showOverview" class="icon ion-ios7-plus-empty"></i> 
+        <i ng-show="objective.showOverview" class="icon ion-ios7-minus-empty"></i> 
+        <h2>Overview</h2>
+      </div> <div ng-show="objective.showOverview" class="item item-text-wrap">
+        <h2>Level: {{ objective.level }}</h2>
+        <progress value={{objective.completion}} max=100></progress>
+        <p>{{ objective.description.summary }}</p>
+      </div>
+      <div class="item item-divider item-icon-right" 
+           ng-click="objective.showDescription = !objective.showDescription">
+        <i ng-show="!objective.showDescription" class="icon ion-ios7-plus-empty"></i> 
+        <i ng-show="objective.showDescription" class="icon ion-ios7-minus-empty"></i> 
+        <h2>Description</h2>
+      </div>
+      <div ng-show="objective.showDescription" class="item item-text-wrap">
+        <p>{{objective.description.full }}</p>
+      </div>
+      <div class="item item-divider item-icon-right" 
+           ng-click="objective.showTasks = !objective.showTasks">
+        <i ng-show="!objective.showTasks" class="icon ion-ios7-plus-empty"></i> 
+        <i ng-show="objective.showTasks" class="icon ion-ios7-minus-empty"></i> 
+        <h2>Tasks</h2>
+      </div>
+      <div ng-repeat="task in objective.tasks" 
+           ng-show="objective.showTasks"
+           ng-click="task.showTask = !task.showTask">
+        <div class="item item-checkbox item-icon-right"> 
+          <i ng-show="!task.showTask" class="icon ion-ios7-plus-empty"></i> 
+          <i ng-show="task.showTask" class="icon ion-ios7-minus-empty"></i> 
+          <label class="checkbox">
+            <input ng-model="task.completed" type="checkbox">
+          </label>
+          {{task.title}}
+        </div>
+        <div ng-show="task.showTask" class="item item-text-wrap">
+          <p>{{objective.description.summary }}</p>
+        </div>
       </div>
     </div>
-  </div>
   </ion-content>
 </ion-view>

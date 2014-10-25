@@ -17,7 +17,7 @@
         Level {{ key }}
         </ion-item>
         <ion-item class="item-icon-right" ng-repeat="objective in value">
-        <div ui-sref="app.objectives.detail({objectiveId: objective.id})">
+        <div class="objective.color" ui-sref="app.objectives.detail({objectiveId: objective.id})">
           {{ objective.title }}
         </div>
         <i ng-show="objective.completed" class="icon ion-checkmark-round balanced"></i>

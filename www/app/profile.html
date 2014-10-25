@@ -15,18 +15,20 @@
         <img class="full-image" ng-src="{{ user.portrait_url }}">
       </div>
 
-      <a href="#" class="item item-icon-left">
+      <div href="#" class="item item-icon-left">
         <i class="icon ion-person assertive"></i>
         {{ user.name.full}}
-      </a>
-      <a href="#" class="item item-icon-left">
+      </div>
+
+      <div href="#" class="item item-icon-left">
         <i class="icon ion-ios7-speedometer assertive"></i>
         Level: {{ user.level }}
-      </a>
-      <a href="#" class="item item-icon-left">
+      </div>
+
+      <div href="#" class="item item-icon-left">
         <i class="icon ion-ios7-bookmarks assertive"></i>
         {{ user.study }}
-      </a>
+      </div>
       <button id="sign-out" class="button button-block button-assertive" ng-click="user.signOut()()">
         <i class="ion-social-github"> </i>Sign Out
       </button>

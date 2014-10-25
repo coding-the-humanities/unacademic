@@ -10,8 +10,8 @@
       first: 'Jan Hein',
       last: 'Hoogstad'
     },
-    avatar_url: 'http://calitreview.com/images/Rembrandt_Sheet%20of%20Studies%20with%20Self-Portrait_Rijksmuseum_7.jpg',
-    portrait_url: 'https://avatars.githubusercontent.com/u/1780358?v=2',
+    avatar_url: 'img/avatar.jpg',
+    portrait_url: 'img/yeehaa.jpg',
     student_number: 123456789,
     level: 100,
     study: 'Philosophy',

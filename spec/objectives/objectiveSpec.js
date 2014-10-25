@@ -20,7 +20,8 @@
         var data = {
           title: "HTML",
           level: 0,
-          description: "Lorem Ipsem Hopsakidee"
+          description: "Lorem Ipsem Hopsakidee",
+          category: "design"
         };
 
         objective= new Objective(data);
@@ -30,8 +31,32 @@
       it("has the right properties", function(){
         expect(objective.title).toEqual("HTML");
         expect(objective.level).toEqual(0);
-        expect(objective.description).toContain("quinoa");
+        expect(objective.description.full).toContain("quinoa");
+        expect(objective.description.full).toContain("brunch");
         // expect(objective.tasks instanceof Task).toBeTruthy();
+      });
+
+      describe("categories", function(){
+        it("has one out of five categories as a property", function(){
+          expect(objective.category).toBeTruthy();
+        });
+
+        it("has the right color code", function(){
+          expect(objective.color).toEqual('positive');
+        });
+
+        it("has one out of five categories as a property", function(){
+          var data = {
+            title: "HTML",
+            level: 0,
+            description: "Lorem Ipsem Hopsakidee",
+            category: "Novels"
+          };
+
+          objective= new Objective(data);
+          expect(objective.category).toBeFalsy();
+        });
+
       });
 
       describe("points", function(){
@@ -89,6 +114,32 @@
           };
           objective = new Objective(data);
           expect(objective.id).toEqual("100_HTML_is_cool");
+        });
+      });
+    
+      describe("url", function(){
+        var baseUrl;
+
+        beforeEach(function(){
+          var data = {
+            title: "HTML",
+            level: 0
+          };
+          objective = new Objective(data);
+          baseUrl = objective.baseUrl;
+        });
+
+        it("generates the correct base url", function(){
+          expect(baseUrl).toEqual("img/objectives/html");
+        });
+
+        it("generates the correct base url", function(){
+          var data = {
+            title: "HTML",
+            level: 0
+          };
+          objective= new Objective(data);
+          expect(objective.url).toEqual(baseUrl + "/logo.svg");
         });
       });
     });
