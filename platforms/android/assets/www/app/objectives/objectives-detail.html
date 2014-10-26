@@ -22,13 +22,7 @@
         <p>{{ objective.description.summary }}</p>
       </div>
 
-      <div ng-class="objective.showDescription ? 'item-dark' : 'item-light'" 
-           class="item item-divider item-icon-right" 
-           ng-click="objective.showDescription = !objective.showDescription">
-        <i ng-show="!objective.showDescription" class="icon ion-ios7-plus dark"></i> 
-        <i ng-show="objective.showDescription" class="icon ion-ios7-minus" ng-class="objective.color"></i> 
-        Description
-      </div>
+      <card-section ng-click="objective.showDescription = !objective.showDescription"></card-section>
 
       <div ng-show="objective.showDescription" class="item item-text-wrap">
         <p>{{objective.description.full }}</p>

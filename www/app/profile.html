@@ -1,6 +1,7 @@
 <ion-view title="Profile">
   <ion-content class="padding-horizontal">
     <button ng-hide="user.id" id="sign-in" class="button button-block button-assertive" ng-click="vm.signIn()()">
+      <card-section></card-section>
       <i class="ion-social-github"> </i>Sign In
     </button>
     <section ng-show="user.id" class="profile list card">

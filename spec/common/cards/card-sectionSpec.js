@@ -10,9 +10,10 @@
       inject(function($compile, $rootScope){
         var scope = $rootScope;
         scope.section = {title: 'HTML'};
-        el = angular.element('<card-section data="section"/>');
+        el = angular.element('<card-section section="section">HTML</card-section>');
         $compile(el)(scope);
         scope.$digest();
+        console.log(el);
       });
     });
 

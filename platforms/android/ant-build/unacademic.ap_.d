@@ -29,7 +29,6 @@
 /home/yeehaa/Documents/unacademic/platforms/android/ant-build/res/drawable-port-hdpi/screen.png \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/_where-is-www.txt \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www \
-/home/yeehaa/Documents/unacademic/platforms/android/assets/www/templates.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/cordova.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/fonts \
@@ -44,10 +43,12 @@
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/routes.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/home.html \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/user.js \
+/home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/templates.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/authentication.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/signin.html \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/objectives \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/data \
+/home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/common \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/users.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/profile.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/app.js \
@@ -63,6 +64,9 @@
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/objectives/objective-details.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/data/objectives.js \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/data/user-objectives.js \
+/home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/common/cards \
+/home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/common/cards/card-section.js \
+/home/yeehaa/Documents/unacademic/platforms/android/assets/www/app/common/cards/card-section.html \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/fonts/NB.woff \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/fonts/NN.eot \
 /home/yeehaa/Documents/unacademic/platforms/android/assets/www/fonts/NN.woff \
