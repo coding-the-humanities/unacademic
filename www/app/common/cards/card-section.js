@@ -5,9 +5,12 @@
       restrict: 'E',
       templateUrl: 'app/common/cards/card-section.html',
       scope: {
-        section: '='
+        title: '@',
+        open: '@',
+        color: '@'
       },
-      transclude: true
+      transclude: true,
+      replace: true
     };
   });
 })();

@@ -1,9 +1,5 @@
 "use strict";
 (function() {
-  var fakeDesc = {
-    full: "Four loko leggings lomo biodiesel roof party, brunch umami banjo cray keytar mustache 90's Neutra Blue Bottle. Normcore roof party cornhole whatever selvage fap. Hella flannel narwhal wolf, mumblecore meh Blue Bottle Wes Anderson heirloom fanny pack Portland. Sustainable banh mi tote bag, fap try-hard Marfa deep v ethical tattooed tousled quinoa.",
-    summary: "Four loko leggings lomo biodiesel roof party, brunch umami banjo cray keytar mustace"
-  };
   var Objective = function Objective($__1) {
     var $__2 = $__1,
         title = $__2.title,
@@ -17,7 +13,7 @@
     this.level = level;
     this.points = points || 0;
     this.tasks = tasks;
-    this.description = fakeDesc || "";
+    this.description = description || "";
     this.baseUrl = this.generateBaseUrl(this.title);
     this.url = this.generateUrl(this.baseUrl);
     this.categories = {

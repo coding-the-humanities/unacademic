@@ -33,7 +33,9 @@
     }
 
     function initialize(){
-      allObjectives = objectives.getObjectives();
+      objectives.getObjectives().then(function(objectives){
+        allObjectives = objectives;
+      });;
     }
   });
 })();

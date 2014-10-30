@@ -1,0 +1,7 @@
+<div ng-class="objective.showOverview ? 'item-dark' : 'item-light'" 
+  class="item item-divider item-icon-right" 
+  ng-click="objective.showOverview = !objective.showOverview">
+  <i ng-show="!objective.showOverview" class="icon ion-ios7-plus dark"></i> 
+  <i ng-show="objective.showOverview" class="icon ion-ios7-minus" ng-class="objective.color"></i> 
+  {{ title }}
+</div> 

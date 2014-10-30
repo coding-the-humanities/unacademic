@@ -35,6 +35,9 @@ module.exports = function(config) {
       'app/objectives/objective-details.js',
       'app/**/*.html',
       'app/common/cards/card-section.js',
+      'app/common/cards/card-header.js',
+      'app/common/tasks/tasklist.js',
+      'app/common/tasks/taskItem.js',
       '../spec/**/*Spec.js'
     ],
 

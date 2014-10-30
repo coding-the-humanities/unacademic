@@ -9,6 +9,8 @@ var sh = require('shelljs');
 var karma = require('karma').server;
 var jshint = require('gulp-jshint');
 var traceur = require('gulp-traceur');
+var yaml = require('gulp-yaml');
+var extend = require('gulp-jsoncombine');
 
 var templateCache = require('gulp-angular-templatecache');
 
@@ -17,7 +19,8 @@ var paths = {
   traceur: './www/app/**/*.es6',
   tests: './spec/**/*Spec.js',
   sass: ['./scss/**/*.scss'],
-  html: './www/**/*.html'
+  html: './www/**/*.html',
+  objectives: './yaml/objectives/**/*.yaml'
 };
 
 var vendor = [
@@ -34,12 +37,27 @@ var testLibs = [
   'bower_components/angular-cookies/angular-cookies.js',
   'bower_components/angular-mocks/angular-mocks.js',
   'bower_components/sinon/index.js',
+  'bower_components/jquery/dist/jquery.js',
   'bower_components/angular-sanitize/angular-sanitize.min.js',
   'bower_components/angular-touch/angular-touch.min.js',
   'bower_components/angular-ui-router/release/angular-ui-router.js',
   'bower_components/ionic/js/ionic.js',
   'bower_components/ionic/js/ionic-angular.min.js',
 ];
+
+gulp.task('objectives', function(){
+  return gulp.src(paths.objectives)
+    .pipe(yaml())
+    .pipe(gulp.dest('www/api/objectives'));
+});
+
+gulp.task('objectivesConcat', function(){
+  return gulp.src('./www/api/objectives/**/*.json')
+    .pipe(extend('objectives.json', function(data){
+      return new Buffer(JSON.stringify(data));
+    }))
+    .pipe(gulp.dest('www/api'));
+});
 
 gulp.task('templates', function () {
   gulp.src([paths.html, '!./www/index.html'])

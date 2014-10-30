@@ -6,7 +6,8 @@
       templateUrl: 'app/common/cards/card-section.html',
       scope: {
         section: '='
-      }
+      },
+      transclude: true
     };
   });
 })();

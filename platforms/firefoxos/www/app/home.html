@@ -1,0 +1,23 @@
+<ion-nav-bar class="bar-header bar-dark">
+  <ion-nav-back-button class="button-icon ion-arrow-left-c">
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-tabs class="tabs-striped tabs-icon-only tabs-dark tabs-background-light">
+ 
+  <ion-tab title="My Profile"
+           icon-on="ion-ios7-filing"
+           icon-off="ion-ios7-filing-outline"
+           ui-sref="app.profile">
+    <ion-nav-view name=profile></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="My Objectives"
+           class="black"
+           icon-on="ion-ios7-clock"
+           icon-off="ion-ios7-clock-outline"
+           ui-sref="app.objectives.user">
+    <ion-nav-view name="objectives"></ion-nav-view>
+  </ion-tab>
+
+</ion-tabs>

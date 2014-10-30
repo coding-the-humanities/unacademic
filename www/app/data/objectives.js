@@ -2,6 +2,11 @@
 
   var app = angular.module('unacademic');
 
+  var fakeDesc = {
+    full: "Four loko leggings lomo biodiesel roof party, brunch umami banjo cray keytar mustache 90's Neutra Blue Bottle. Normcore roof party cornhole whatever selvage fap. Hella flannel narwhal wolf, mumblecore meh Blue Bottle Wes Anderson heirloom fanny pack Portland. Sustainable banh mi tote bag, fap try-hard Marfa deep v ethical tattooed tousled quinoa.",
+   summary: "Four loko leggings lomo biodiesel roof party, brunch umami banjo cray keytar mustace"
+  };
+
   var tasks = [
     {
       title: "Clean Up"
@@ -106,14 +111,24 @@
       return task;
     });
     objective.id = level + "_"  + objective.title;
+    objective.description = fakeDesc;
     objectives[objective.id] = objective;
   });
 
 
 
-  app.service('objectives', function(Objective){
+  app.service('objectives', function($http, Objective){
     return {
       getObjectives: function(){
+        $http.get('./api/objectives.json').success(function(data){
+          var objectives = {};
+          var keys = Object.keys(data);
+          keys.forEach(function(key){
+            objectives[key] = new Objective(data[key]);
+          });
+          console.log(objectives);
+          return objectives;
+        });
         return objectives;
       }
     };

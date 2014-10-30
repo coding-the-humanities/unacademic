@@ -20,7 +20,10 @@
         var data = {
           title: "HTML",
           level: 0,
-          description: "Lorem Ipsem Hopsakidee",
+          description: {
+            full: "Lorem Ipsem Hopsakidee",
+            summary: "Hopsakidee"
+          },
           category: "design"
         };
 
@@ -31,8 +34,8 @@
       it("has the right properties", function(){
         expect(objective.title).toEqual("HTML");
         expect(objective.level).toEqual(0);
-        expect(objective.description.full).toContain("quinoa");
-        expect(objective.description.full).toContain("brunch");
+        expect(objective.description.full).toContain("Hopsakidee");
+        expect(objective.description.full).toContain("Hopsakidee");
         // expect(objective.tasks instanceof Task).toBeTruthy();
       });
 
@@ -116,7 +119,7 @@
           expect(objective.id).toEqual("100_HTML_is_cool");
         });
       });
-    
+
       describe("url", function(){
         var baseUrl;
 
