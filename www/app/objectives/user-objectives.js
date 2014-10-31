@@ -6,6 +6,9 @@
     var vm = this;
 
     vm.all = user.objectives;
+    vm.empty = function(){
+      return Object.keys(user.objectives).length < 1;
+    };
 
     vm.signIn = signIn;
 

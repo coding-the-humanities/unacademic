@@ -22,4 +22,10 @@ describe("Objectives Controller", function () {
     expect(objectives.all).toBeDefined();
   });
 
+  it("knows if it is empty", function(){
+    expect(objectives.empty()).toBeTruthy();
+    objectives.all.something = "bla";
+    expect(objectives.empty()).toBeFalsy();
+  });
+
 });
