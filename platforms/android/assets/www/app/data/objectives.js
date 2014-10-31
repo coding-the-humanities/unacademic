@@ -4,10 +4,10 @@
 
   app.service('objectives', function($http, $q, Objective){
     return {
-      getObjectives2: getObjectives2
+      getObjectives: getObjectives
     };
 
-    function getObjectives2(){
+    function getObjectives(){
       var deferred = $q.defer();
       $http.get('./api/objectives.json').success(function(data){
         var objectives = {};

@@ -16,11 +16,9 @@
       var userObjectives = users.getUser(userId).objectives;
       var keys = Object.keys(userObjectives);
 
-      objectives.getObjectives2().then(function(data){
-        console.log(data);
+      objectives.getObjectives().then(function(data){
         allObjectives = data;
         keys.forEach(function(key){
-          console.log(key);
           allObjectives[key].added = true;
         });
         deferred.resolve(allObjectives);
@@ -35,12 +33,12 @@
       var userObjective = users.getUser(userId).objectives[objectiveId];
       var keys = Object.keys(userObjective);
 
-      objectives.getObjectives2().then(function(data){
+      objectives.getObjectives().then(function(data){
         allObjectives = data;
         var objective = allObjectives[objectiveId];
-        // keys.forEach(function(key){
-        //   objective[key] = userObjective[key];
-        // });
+        keys.forEach(function(key){
+          objective[key] = userObjective[key];
+        });
         deferred.resolve(objective);
       });
       return deferred.promise;

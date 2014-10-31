@@ -27,7 +27,7 @@ module.exports = function(config) {
       'app/users.js',
       'app/user.js',
       'app/authentication.js',
-      'app/Signin.js',
+      'app/signin.js',
 
       'app/objectives/objective.compiled.js',
       'app/objectives/user-objectives.js',
@@ -37,7 +37,7 @@ module.exports = function(config) {
       'app/common/cards/card-section.js',
       'app/common/cards/card-header.js',
       'app/common/tasks/tasklist.js',
-      'app/common/tasks/taskItem.js',
+      'app/common/tasks/task-item.js',
       '../spec/**/*Spec.js'
     ],
 

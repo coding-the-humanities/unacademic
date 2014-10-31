@@ -6,32 +6,6 @@
 
     beforeEach(function () {
 
-      var mockUsers = {
-        getUser: function(){
-          return {
-            objectives: {
-              "000_HTML": {
-                added: true,
-                completed: false
-              }
-
-            }
-          };
-        }
-      };
-      var testObjectives = {
-        "000_HTML": {
-          title: "HTML"
-        },
-        "001_Polymer": {},
-      };
-
-      var mockObjectives = {
-        getObjectives: function(){
-          return $q.when(testObjectives);
-        }
-      };
-
       module("unacademic", function($provide){
         $provide.value('users', mockUsers);
         $provide.value('objectives', mockObjectives);
@@ -94,4 +68,31 @@
       });
     });
   });
+
+  var mockObjectives = {
+    getObjectives: function(){
+      return $q.when(testObjectives);
+    }
+  };
+
+  var mockUsers = {
+    getUser: function(){
+      return {
+        objectives: {
+          "000_HTML": {
+            added: true,
+            completed: false
+          }
+
+        }
+      };
+    }
+  };
+
+  var testObjectives = {
+    "000_HTML": {
+      title: "HTML"
+    },
+    "001_Polymer": {},
+  };
 })();

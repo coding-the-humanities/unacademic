@@ -1,11 +1,11 @@
 (function(){
-  describe("tasklist", function(){
+  describe("taskItem", function(){
     var el;
 
     beforeEach(function(){
       module("unacademic");
 
-      module("app/common/tasks/taskItem.html");
+      module("app/common/tasks/task-item.html");
       template = '<task-item task="task" color="positive"></task-item>';
 
       inject(function($compile, $rootScope){

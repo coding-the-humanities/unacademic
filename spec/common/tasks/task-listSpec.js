@@ -9,7 +9,7 @@
       template = '<tasklist tasks="tasks"></tasklist>';
 
       inject(function($compile, $rootScope, $templateCache){
-        $templateCache.put('app/common/tasks/taskItem.html', '<div class="item"></div>');
+        $templateCache.put('app/common/tasks/task-item.html', '<div class="item"></div>');
         scope = $rootScope;
         scope.tasks = [
           {title: "HTML"},
