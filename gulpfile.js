@@ -45,13 +45,13 @@ var testLibs = [
   'bower_components/ionic/js/ionic-angular.min.js',
 ];
 
-gulp.task('objectives', function(){
+gulp.task('objectives_toJSON', function(){
   return gulp.src(paths.objectives)
     .pipe(yaml())
     .pipe(gulp.dest('www/api/objectives'));
 });
 
-gulp.task('objectivesConcat', function(){
+gulp.task('objectives', ['objectives_toJSON'], function(){
   return gulp.src('./www/api/objectives/**/*.json')
     .pipe(extend('objectives.json', function(data){
       return new Buffer(JSON.stringify(data));
@@ -110,6 +110,7 @@ gulp.task('watch', function() {
   gulp.watch([paths.scripts, paths.tests], ['lint', 'test']);
   gulp.watch(paths.traceur, ['traceur']);
   gulp.watch(paths.html, ['templates']);
+  gulp.watch(paths.objectives, ['objectives']);
 });
 
 gulp.task('test', function (done) {
