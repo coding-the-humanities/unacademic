@@ -2,6 +2,7 @@ title:      HTML
 level:      0
 points:     100
 mandatory:  false
+category:   markup
 
 technologies:
   - HTML

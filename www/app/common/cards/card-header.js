@@ -6,7 +6,8 @@
       templateUrl: 'app/common/cards/card-header.html',
       scope: {
         title: '@',
-        logo: '@'
+        logo: '@',
+        color: '@'
       },
       replace: true
     };

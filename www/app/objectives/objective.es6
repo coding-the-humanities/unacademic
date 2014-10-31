@@ -13,7 +13,7 @@
         "markup":   "positive",
         "data":     "balanced",
         "workflow": "energized",
-        "general":  "dark"
+        "general":  "calm"
       };
       this.completion = 70,
       this.category = this.checkCategory(category);

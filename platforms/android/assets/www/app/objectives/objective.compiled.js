@@ -21,7 +21,7 @@
       "markup": "positive",
       "data": "balanced",
       "workflow": "energized",
-      "general": "dark"
+      "general": "calm"
     };
     this.completion = 70, this.category = this.checkCategory(category);
     this.color = ("" + this.categories[$traceurRuntime.toProperty(this.category)]);
