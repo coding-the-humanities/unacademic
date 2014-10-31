@@ -10,14 +10,14 @@
 
       inject(function($injector){
         service = $injector.get('objectives', {
-          Objective: Objective 
+          Objective: Objective
         });
       });
     });
 
-    describe("objects retrieval", function(){
+    xdescribe("objects retrieval", function(){
       it("gets all objectives", function(){
-        var objectives = service.getObjectives(); 
+        var objectives = service.getObjectives();
       });
     });
   });

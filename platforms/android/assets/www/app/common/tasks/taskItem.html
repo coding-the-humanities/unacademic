@@ -1,0 +1,13 @@
+<section class="task-item">
+  <div class="item item-checkbox item-icon-right">
+    <i ng-show="!task.showTask" class="icon ion-ios7-plus-empty" ng-class="color"></i>
+    <i ng-show="task.showTask" class="icon ion-ios7-minus-empty" ng-class="color"></i>
+    <label class="checkbox" ng-class="checkboxColor">
+      <input ng-model="task.completed" type="checkbox">
+    </label>
+    {{task.title}}
+  </div>
+  <div ng-show="task.showTask" class="item item-text-wrap">
+    <p>{{objective.description.summary }}</p>
+  </div>
+</section>

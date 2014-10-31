@@ -1,15 +1,13 @@
 (function(){
   var app = angular.module('unacademic');
-  app.directive('cardSection', function(){
+  app.directive('cardHeader', function(){
     return {
       restrict: 'E',
-      templateUrl: 'app/common/cards/card-section.html',
+      templateUrl: 'app/common/cards/card-header.html',
       scope: {
         title: '@',
-        open: '@',
-        color: '@'
+        logo: '@'
       },
-      transclude: true,
       replace: true
     };
   });

@@ -2,12 +2,12 @@
 
   describe("User Service", function(){
 
-    var User;
+    var User, $rootScope;
 
     beforeEach(function () {
       var mockObjectives = {
         getObjectives: function(){
-          return testObjectives;
+          return $q.when(testObjectives);
         }
       };
 
@@ -17,6 +17,8 @@
 
       inject(function($injector){
         User = $injector.get('User');
+        $q = $injector.get('$q');
+        $rootScope = $injector.get('$rootScope');
       });
     });
 
@@ -27,7 +29,7 @@
         user = new User(testUser);
       });
 
-      xdescribe("profile", function(){
+      describe("profile", function(){
         var profile;
 
         beforeEach(function(){
@@ -78,9 +80,11 @@
           var id;
 
           beforeEach(function(){
-            user.addObjective('000_html');
-            keys = Object.keys(userObjectives);
-            id = keys[0];
+            user.addObjective('000_html').then(function(data){
+              keys = Object.keys(userObjectives);
+              id = keys[0];
+            });
+            $rootScope.$digest();
           });
 
           it("adds objectives", function(){
@@ -108,12 +112,16 @@
         });
 
         describe("remove", function(){
+
           it("removes objectives", function(){
-
-            user.addObjective('000_html');
-            user.removeObjective('000_html');
-
             var keys = Object.keys(userObjectives);
+
+            user.objectives['000_html'] = "bla";
+            expect(keys.length).toEqual(1);
+
+            user.removeObjective('000_html');
+            keys = Object.keys(userObjectives);
+
             expect(keys.length).toEqual(0);
           });
         });
@@ -122,7 +130,7 @@
           it("marks objectives as completed", function(){
             var key = '000_html';
 
-            user.addObjective(key);
+            user.objectives[key] = {};
             user.markObjectiveCompleted(key);
 
             var objective = userObjectives[key];

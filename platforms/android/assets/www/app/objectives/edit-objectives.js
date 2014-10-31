@@ -16,6 +16,7 @@
     }
 
     function add(id){
+      console.log(id);
       objectives[id].added = true;
       user.addObjective(id);
     }

@@ -2,7 +2,7 @@
 
   app = angular.module('unacademic');
 
-  app.service('User', function(objectives){
+  app.service('User', function($q, objectives){
 
     function User(user){
       this.profile = user.profile;
@@ -15,11 +15,17 @@
     };
 
     User.prototype.addObjective = function(id){
-      var allObjectives = objectives.getObjectives();
-      var objective = allObjectives[id];
-      objective.started = new Date();
-      objective.completed = false;
-      this.objectives[id] = objective;
+      var deferred = $q.defer();
+      var self = this;
+      objectives.getObjectives2().then(function(allObjectives){
+        var objective = allObjectives[id];
+        console.log(objective.id);
+        objective.started = new Date();
+        objective.completed = false;
+        self.objectives[id] = objective;
+        deferred.resolve(objective);
+      });
+      return deferred.promise;
     };
 
     User.prototype.removeObjective = function(id){

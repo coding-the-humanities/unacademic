@@ -1,6 +1,6 @@
 (function(){
 
-  var objectives;
+  var objectives, scope;
 
   describe("userObjectives Service", function(){
 
@@ -19,15 +19,16 @@
           };
         }
       };
+      var testObjectives = {
+        "000_HTML": {
+          title: "HTML"
+        },
+        "001_Polymer": {},
+      };
 
       var mockObjectives = {
         getObjectives: function(){
-          return {
-            "000_HTML": {
-              title: "HTML"
-            },
-            "001_Polymer": {},
-          };
+          return $q.when(testObjectives);
         }
       };
 
@@ -38,6 +39,9 @@
 
       inject(function($injector){
         objectives = $injector.get('userObjectives');
+        $rootScope = $injector.get('$rootScope');
+        $q = $injector.get('$q');
+
       });
     });
 
@@ -46,7 +50,10 @@
         var allObjectives;
 
         beforeEach(function(){
-          allObjectives = objectives.getAllObjectives('123');
+          objectives.getAllObjectives('123').then(function(data){
+            allObjectives = data;
+          });
+          $rootScope.$digest();
         });
 
         it("gets objectives", function(){
@@ -66,7 +73,10 @@
         var objective;
 
         beforeEach(function(){
-          objective = objectives.getObjective('123', '000_HTML');
+          objectives.getObjective('123', '000_HTML').then(function(data){
+            objective = data;
+          });
+          $rootScope.$digest();
         });
 
         it("gets the objective", function(){

@@ -53,10 +53,15 @@
       templateUrl: './app/objectives/objectives-detail.html',
       controller: "ObjectiveDetails as objective",
       resolve: {
-        objective: function($stateParams, userObjectives, currentUser, Objective){
+        objective: function($stateParams, $q, userObjectives, currentUser, Objective){
+          var deferred = $q.defer();
           var objectiveId = $stateParams.objectiveId;
-          var objective = userObjectives.getObjective(currentUser.id, objectiveId);
-          return new Objective(objective);
+
+          userObjectives.getObjective(currentUser.id, objectiveId).then(function(data){
+            var objective = new Objective(data);
+            deferred.resolve(objective);
+          });
+          return deferred.promise;
         }
       }
     });
