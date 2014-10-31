@@ -3,7 +3,7 @@
   app.directive('taskItem', function(){
     return {
       restrict: 'E',
-      templateUrl: 'app/common/tasks/taskItem.html',
+      templateUrl: 'app/common/tasks/task-item.html',
       controller: function($scope){
         $scope.checkboxColor = "checkbox-" + $scope.color;
       },

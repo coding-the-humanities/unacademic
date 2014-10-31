@@ -48,11 +48,7 @@ var testLibs = [
 gulp.task('objectives', function(){
   return gulp.src(paths.objectives)
     .pipe(yaml())
-    .pipe(gulp.dest('www/api/objectives'));
-});
-
-gulp.task('objectivesConcat', function(){
-  return gulp.src('./www/api/objectives/**/*.json')
+    .pipe(gulp.dest('www/api/objectives'))
     .pipe(extend('objectives.json', function(data){
       return new Buffer(JSON.stringify(data));
     }))
@@ -110,6 +106,7 @@ gulp.task('watch', function() {
   gulp.watch([paths.scripts, paths.tests], ['lint', 'test']);
   gulp.watch(paths.traceur, ['traceur']);
   gulp.watch(paths.html, ['templates']);
+  gulp.watch(paths.objectives, ['objectives']);
 });
 
 gulp.task('test', function (done) {

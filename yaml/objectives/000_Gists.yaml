@@ -1,7 +1,8 @@
-title:      Gist
+title:      Gists
 level:      0
 points:     100
 mandatory:  false
+category:   workflow
 
 technologies:
   - Gist
