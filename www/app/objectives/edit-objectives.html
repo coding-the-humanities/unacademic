@@ -11,10 +11,10 @@
           {{ objective.title }}
         </div>
         <div ng-hide="objective.added" ng-click="objectives.add(objective.id)">
-          <i class="icon ion-ios7-plus dark"></i>
+          <i class="icon ion-ios7-plus" ng-class="objective.color"></i>
         </div>
         <div ng-show="objective.added" ng-click="objectives.remove(objective.id)">
-          <i class="icon ion-ios7-minus dark"></i>
+          <i class="icon ion-ios7-minus" ng-class="objective.color"></i>
         </ion-item>
       </section>
     </section>

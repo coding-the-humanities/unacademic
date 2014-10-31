@@ -45,18 +45,9 @@ var testLibs = [
   'bower_components/ionic/js/ionic-angular.min.js',
 ];
 
-gulp.task('objectives_toJSON', function(){
+gulp.task('objectives', function(){
   return gulp.src(paths.objectives)
     .pipe(yaml())
-<<<<<<< HEAD
-    .pipe(gulp.dest('www/api/objectives'));
-});
-
-gulp.task('objectives', ['objectives_toJSON'], function(){
-  return gulp.src('./www/api/objectives/**/*.json')
-=======
-    .pipe(gulp.dest('www/api/objectives'))
->>>>>>> 3d42d01233d888a35595ccc40eabae4db95f6770
     .pipe(extend('objectives.json', function(data){
       return new Buffer(JSON.stringify(data));
     }))

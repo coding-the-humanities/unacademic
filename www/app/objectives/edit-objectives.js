@@ -25,6 +25,7 @@
       user.removeObjective(id);
     }
 
+
     return vm;
   });
 })();
