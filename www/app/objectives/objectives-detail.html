@@ -11,7 +11,7 @@
       <card-section title="Overview" color="{{objective.color}}">
         <div class="item item-text-wrap">
           <h2>Level: {{ objective.level }}</h2>
-          <progress value={{objective.completion}}
+          <progress value={{objective.completion()}}
             ng-class="{{objective.color}}" max=100>
           </progress>
           <p>{{ objective.description.summary }}</p>

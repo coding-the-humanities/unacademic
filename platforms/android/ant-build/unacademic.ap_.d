@@ -91,7 +91,9 @@
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/tasks/tasklist.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/tasks/task-item.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/tasks/task-item.html \
+/home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/tasks/task.es6 \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/tasks/tasklist.html \
+/home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/tasks/task.compiled.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/cards/card-section.html \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/cards/card-section.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/common/cards/card-header.js \

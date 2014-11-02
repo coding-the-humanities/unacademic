@@ -7,6 +7,9 @@
 
     vm.showDescription = false;
     vm.showTasks = false;
+    vm.completion = function(){
+      return objective.completion;
+    }
 
     setObjectKeysToVM(objective);
 

@@ -5,7 +5,7 @@
       restrict: 'E',
       templateUrl: 'app/common/tasks/task-item.html',
       controller: function($scope){
-        $scope.checkboxColor = "checkbox-" + $scope.color;
+        $scope.buttonColor = "button-" + $scope.color;
       },
       scope: {
         task: '=',

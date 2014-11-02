@@ -27,6 +27,7 @@
       it("binds the data", function(){
         expect(header.text()).toContain('HTML');
       });
+
       it("has the right icon color class", function(){
         var icon = $(el).find('i');
         expect(icon.hasClass('positive')).toBeTruthy();
@@ -37,14 +38,21 @@
       });
     });
 
+
     describe("opening and closing section", function(){
+
       it("has is closed by default", function(){
         expect(section.hasClass('ng-hide')).toBeTruthy();
       });
 
       it("is open after clicking header", function(){
-        $(el).find('.item-divider').click();
+        header.click();
         expect(section.hasClass('ng-hide')).toBeFalsy();
+      });
+
+      it("has the right color class", function(){
+        header.click();
+        expect(header.hasClass('item-positive')).toBeTruthy();
       });
     });
 

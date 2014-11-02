@@ -38,6 +38,7 @@ module.exports = function(config) {
       'app/common/cards/card-header.js',
       'app/common/tasks/tasklist.js',
       'app/common/tasks/task-item.js',
+      'app/common/tasks/task.compiled.js',
       '../spec/**/*Spec.js'
     ],
 

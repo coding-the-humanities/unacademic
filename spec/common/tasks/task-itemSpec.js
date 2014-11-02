@@ -31,15 +31,11 @@
         expect(title).toContain('HTML');
       });
 
-      it("has the right colored icon", function(){
-        var icon = $(el).find('.icon');
-        expect(icon.hasClass('positive')).toBeTruthy();
+      it("has the right colored button", function(){
+        var button = $(el).find('.button');
+        expect(button.hasClass('button-positive')).toBeTruthy();
       });
 
-      it("has the right colored checkbox", function(){
-        var label = $(el).find('label');
-        expect(label.hasClass('checkbox-positive')).toBeTruthy();
-      });
     });
 
   });

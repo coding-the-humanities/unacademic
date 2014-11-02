@@ -10,6 +10,7 @@
 
       inject(function($injector){
         Objective = $injector.get('Objective');
+        Task = $injector.get('Task');
       });
     });
 
@@ -24,7 +25,13 @@
             full: "Lorem Ipsem Hopsakidee",
             summary: "Hopsakidee"
           },
-          category: "design"
+          category: "design",
+          tasks: [
+            {completed: false},
+            {completed: true},
+            {completed: false},
+            {completed: false},
+          ]
         };
 
         objective= new Objective(data);
@@ -36,7 +43,7 @@
         expect(objective.level).toEqual(0);
         expect(objective.description.full).toContain("Hopsakidee");
         expect(objective.description.full).toContain("Hopsakidee");
-        // expect(objective.tasks instanceof Task).toBeTruthy();
+        expect(objective.tasks[0] instanceof Task).toBeTruthy();
       });
 
       describe("categories", function(){
@@ -60,6 +67,12 @@
           expect(objective.category).toBeFalsy();
         });
 
+      });
+
+      describe("completion", function(){
+        it("should know what percentage of tasks is completed", function(){
+          expect(objective.completion).toEqual(25);
+        });
       });
 
       describe("points", function(){
