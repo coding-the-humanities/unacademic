@@ -8,12 +8,11 @@ technologies:
   - HTML
 
 description: 
-  full: |
+  full: >
     HTML stands for Hypertext Markup Language. When you look at a web page on a 
     web browser you see, at the simplest level, words. HTML instructs a web 
     browser what content to display. In many cases a page also displays images 
     or maybe video clips. 
-
     HTML defines and separates "content" (words, images, audio, video, and so 
     on) from "presentation" (how to display a specific type of content). HTML 
     uses a pre-defined set of elements to identify content types.
@@ -32,15 +31,13 @@ tasks:
       - Read the article.
       - Watch the instruction video.
       - Download a text editor. We recommend Sublime Text 2.
-      - Write in the text editor in your own words what HTML is and what it 
-        consists of.
+      - Write in the text editor in your own words what HTML is and what it consists of.
     resources:
       - title:   Introduction
         type:    article
         site:
           name:  Mozilla Developer Network
-        url:     https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/
-                 Introduction
+        url:     https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Introduction
       - title:   Introduction video
         type:    video
         site:
@@ -51,6 +48,7 @@ tasks:
         site:
           name:  Sublime Text
         url:     http://www.sublimetext.com/2   
+
   - title: Basic Structure
     description: >
       HTML works with things called 'tags'. 
@@ -75,6 +73,7 @@ tasks:
           name:  CSS Tricks
           url:   http://css-tricks.com
         url:   http://css-tricks.com/snippets/html/html5-page-structure/
+
   - title: The Anchor Tag
     description: >
       Linking is a way to reference to other stuff on the internet. 
@@ -92,6 +91,7 @@ tasks:
         site:
           name:  Mozilla Developer Network
         url:     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+        
   - title: The Image Tag
     description: >
       Everybody loves pictures. 
