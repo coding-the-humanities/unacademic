@@ -16,6 +16,8 @@
   app.value('userSession',{});
   app.value('currentUser',{});
   app.value('profile',{});
+  app.constant('faker', faker);
+  app.constant('_', _);
 
   app.run(function($ionicPlatform, $rootScope, userSession) {
     $ionicPlatform.ready(function() {

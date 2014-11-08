@@ -28,7 +28,8 @@ var vendor = [
   'bower_components/angularfire/dist/angularfire.js',
   'bower_components/angular-filter/dist/angular-filter.js',
   'bower_components/firebase-simple-login/firebase-simple-login.js',
-  'bower_components/lodash/dist/lodash.js'
+  'bower_components/lodash/dist/lodash.js',
+  'bower_components/Faker/build/build/faker.js'
 ];
 
 var testLibs = [

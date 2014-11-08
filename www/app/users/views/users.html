@@ -1,8 +1,14 @@
 <ion-view title="Users">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="item in users.all">
-        {{item}}
+      <ion-item class="user item-avatar" 
+         collection-repeat="user in users.all"
+         collection-item-width="'100%'"
+         collection-item-height="76"
+         ng-style="{height: 76}">
+        <img ng-src="{{user.profile.avatar_url}}"></img>
+        <h2>{{user.profile.name.full}}</h2>
+        <p>{{user.profile.role}}</h2>
       </ion-item>
     </ion-list>
   </ion-content>

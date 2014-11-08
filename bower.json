@@ -20,6 +20,7 @@
     "firebase-simple-login": "~1.6.4",
     "angular-filter": "~0.4.9",
     "lodash": "~2.4.1",
-    "traceur-runtime": "~0.0.66"
+    "traceur-runtime": "~0.0.66",
+    "Faker": "~2.0.0"
   }
 }
