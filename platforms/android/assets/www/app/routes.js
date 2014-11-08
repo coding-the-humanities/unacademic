@@ -22,24 +22,26 @@
       }
     });
 
+    $stateProvider.state('app.news', {
+      url: '/news',
+      templateUrl: './app/news.html'
+    });
+
+    $stateProvider.state('app.users', {
+      url: '/users',
+      templateUrl: './app/users.html'
+    });
+
     $stateProvider.state('app.profile', {
       url: '/profile',
-      views: {
-        profile: {
-          templateUrl: './app/profile.html',
-          controller: "Profile as user",
-        }
-      }
+      templateUrl: './app/profile.html',
+      controller: "Profile as user",
     });
 
     $stateProvider.state('app.objectives', {
       url: '/objectives',
       abstract: true,
-      views: {
-        objectives: {
-          templateUrl: './app/objectives/objectives.html'
-        }
-      }
+      templateUrl: './app/objectives/objectives.html'
     });
 
     $stateProvider.state('app.objectives.user', {
