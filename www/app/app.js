@@ -1,9 +1,15 @@
 (function(){
   var app = angular.module('unacademic', [
+    'templates',
     'ionic',
     'firebase',
     'angular.filter',
-    'templates'
+    'unacademic.authentication',
+    'unacademic.users',
+    'unacademic.objectives',
+    'unacademic.news',
+    'unacademic.tasks',
+    'unacademic.cards'
   ]);
 
   app.value('FIREBASE_REF','https://mobile-app.firebaseio.com/');

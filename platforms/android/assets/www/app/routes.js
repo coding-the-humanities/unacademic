@@ -29,7 +29,13 @@
 
     $stateProvider.state('app.users', {
       url: '/users',
-      templateUrl: './app/users.html'
+      templateUrl: './app/users.html',
+      controller: "Users as users",
+      resolve: {
+        users: function(users){
+          return users.getUsers();
+        }
+      }
     });
 
     $stateProvider.state('app.profile', {

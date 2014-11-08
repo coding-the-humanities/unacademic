@@ -67,6 +67,7 @@
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/img/objectives/dev_tools/logo.svg \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/img/objectives/photostack/logo.svg \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/img/objectives/html/logo.svg \
+/home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/usersCtrl.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/app.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/authentication.js \
 /home/yeehaa/Documents/cth/unacademic/platforms/android/assets/www/app/users.js \

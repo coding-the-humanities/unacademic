@@ -29,6 +29,9 @@
       getUser: function(){
        var user = new User(testUser);
        return user;
+      },
+      getUsers: function(){
+        return ["Dirk", "Hank", "Chuck", "Martin"];
       }
     };
   });

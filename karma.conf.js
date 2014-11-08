@@ -18,27 +18,41 @@ module.exports = function(config) {
       '../spec/testLibs.js',
       'lib/traceur-runtime/traceur-runtime.js',
       'lib/vendor.js',
-      'app/app.js',
-      'app/templates.js',
-      'app/profile.js',
-
-      'app/data/objectives.js',
-      'app/data/user-objectives.js',
-      'app/users.js',
-      'app/user.js',
-      'app/authentication.js',
-      'app/signin.js',
-
-      'app/objectives/objective.compiled.js',
-      'app/objectives/user-objectives.js',
-      'app/objectives/edit-objectives.js',
-      'app/objectives/objective-details.js',
       'app/**/*.html',
-      'app/common/cards/card-section.js',
-      'app/common/cards/card-header.js',
-      'app/common/tasks/tasklist.js',
-      'app/common/tasks/task-item.js',
-      'app/common/tasks/task.compiled.js',
+      'app/templates.js',
+
+      'app/app.js',
+
+      'app/authentication/authentication.js',
+      'app/authentication/services/authentication.js',
+      'app/authentication/controllers/signin.js',
+
+      'app/users/users.js',
+      'app/users/models/users.js',
+      'app/users/models/user.js',
+      'app/users/controllers/users.js',
+      'app/users/controllers/profile.js',
+
+
+      'app/objectives/objectives.js',
+      'app/objectives/models/objective.compiled.js',
+      'app/objectives/models/user-objectives.js',
+      'app/objectives/models/objectives.js',
+      'app/objectives/controllers/user-objectives.js',
+      'app/objectives/controllers/edit-objectives.js',
+      'app/objectives/controllers/objective-details.js',
+
+      'app/news/news.js',
+
+      'app/cards/cards.js',
+      'app/cards/card-section.js',
+      'app/cards/card-header.js',
+
+      'app/tasks/tasks.js',
+      'app/tasks/task-list.js',
+      'app/tasks/task-item.js',
+      'app/tasks/task.compiled.js',
+
       '../spec/**/*Spec.js'
     ],
 
