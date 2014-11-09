@@ -1,0 +1,28 @@
+<ion-view title="My Objectives">
+  <ion-content class="padding-horizontal">
+
+    <button ng-hide="objectives.all" id="sign-in" class="button button-block button-assertive" ng-click="objectives.signIn()">
+      <i class="ion-social-github"> </i>Sign In
+    </button>
+
+    <section ng-hide="objectives.empty()" class="profile">
+
+      <section class="list card level" ng-repeat="(key, value) in objectives.all | groupBy: 'level'">
+        <ion-item class="item-divider item-dark">
+        Level {{ key }}
+        </ion-item>
+        <ion-item class="item-icon-right" ng-repeat="objective in value">
+          <div ui-sref="app.objectives.detail({objectiveId: objective.id})">
+            {{ objective.title }}
+          </div>
+          <i ng-show="objective.completed" class="icon ion-checkmark-round balanced"></i>
+        </ion-item>
+      </section>
+      <button class="button button-full button-dark" ui-sref="app.objectives.edit">
+        Add Objectives
+      </button>
+    </section>
+    <button ng-show="objectives.empty()" class="button button-full button-assertive" ui-sref="app.objectives.edit">
+      Add Objectives
+    </button>
+</ion-view>

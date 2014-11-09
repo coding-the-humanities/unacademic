@@ -1,0 +1,37 @@
+<section class="task-item">
+  <div class="item item-divider item-icon-right"
+       ng-class="task.showTask ? 'item-dark': 'item-light'"
+       ng-click="task.showTask = !task.showTask">
+    <i ng-show="!task.showTask" class="icon ion-ios7-plus-empty dark"></i>
+    <i ng-show="task.showTask" class="icon ion-ios7-minus-empty light"></i>
+    <span ng-show="!task.completed">{{task.title}}</span>
+    <del ng-show="task.completed">{{task.title}}</del>
+  </div>
+  <section ng-show="task.showTask">
+    <div class="item item-text-wrap">
+      {{task.description}}
+    </div>
+    <div class="item item-divider">
+      Instructions
+    </div>
+    <div ng-repeat="instruction in task.instructions" class="item item-text-wrap">
+      {{instruction}}
+    </div>
+    <div class="item item-divider">
+      Resources
+    </div>
+    <a ng-repeat="resource in task.resources"
+       ng-src=""
+       class="item item-text-wrap">
+       {{resource.site.name}} - {{resource.title}}
+    </a>
+    <div>
+      <button ng-show="!task.completed" class="button button-block" ng-click="task.toggleCompleted()" ng-class="buttonColor">
+        Complete
+      </button>
+      <button ng-show="task.completed" class="button button-block button-dark" ng-click="task.toggleCompleted()">
+        Forgot Something
+      </button>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,12 @@
+<section class="card-section">
+    <div ng-class="headerColor(open)"
+         class="item item-divider item-icon-right"
+         ng-click="open = !open">
+      <i ng-show="!open" class="icon ion-ios7-plus" ng-class="color"></i>
+      <i ng-show="open" class="icon ion-ios7-minus light"></i>
+      {{title}}
+    </div>
+    <section ng-show="open">
+      <div class="ng-transclude"></div>
+    </section>
+</section>
