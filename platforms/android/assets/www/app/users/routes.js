@@ -8,10 +8,11 @@
       templateUrl: 'app/users/views/users.html',
       controller: "Users as users",
       resolve: {
-        users: function($q, $http, users){
+        users: function($q, users){
           var deferred = $q.defer();
-          $http.get('api/users.json').then(function(response){
-            deferred.resolve(response.data);
+          users.getUsers().then(function(users){
+            console.table(users);
+            return deferred.resolve(users);
           });
           return deferred.promise;
         }

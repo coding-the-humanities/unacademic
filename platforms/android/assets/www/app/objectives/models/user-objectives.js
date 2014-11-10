@@ -11,36 +11,35 @@
 
     function getAllObjectives(userId){
       var deferred = $q.defer();
-      var allObjectives;
 
-      var userObjectives = users.getUser(userId).objectives;
-      var keys = Object.keys(userObjectives);
-
-      objectives.getObjectives().then(function(data){
-        allObjectives = data;
+      $q.all([users.getUser(), objectives.getObjectives()]).then(function(data){
+        var userObjectives = data[0].objectives;
+        var keys = Object.keys(userObjectives);
+        var allObjectives = data[1];
         keys.forEach(function(key){
           allObjectives[key].added = true;
         });
         deferred.resolve(allObjectives);
       });
 
+
       return deferred.promise;
     }
 
-    function getObjective(userId, objectiveId){
+    function getObjective(user, objectiveId){
       var deferred = $q.defer();
-      var allObjectives;
-      var userObjective = users.getUser(userId).objectives[objectiveId];
-      var keys = Object.keys(userObjective);
 
       objectives.getObjectives().then(function(data){
-        allObjectives = data;
+        var userObjective = user.objectives[objectiveId];
+        var keys = Object.keys(userObjective);
+        var allObjectives = data;
         var objective = allObjectives[objectiveId];
         keys.forEach(function(key){
           objective[key] = userObjective[key];
         });
         deferred.resolve(objective);
       });
+
       return deferred.promise;
     }
   });

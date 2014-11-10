@@ -1,34 +1,25 @@
 (function(){
   var app = angular.module('unacademic.authentication');
 
-  app.service('authentication', function(users, currentUser, $state){
+  app.service('authentication', function($q, users, $state, session){
     return {
-      getCurrentUserId: getCurrentUserId,
-      getCurrentUserProfile: getCurrentUserProfile,
-      getCurrentUserObjectives: getCurrentUserObjectives,
       signIn: signIn,
       signOut: signOut
     };
 
-    function getCurrentUserId(){
-      return currentUser.id;
-    }
-
-    function getCurrentUserProfile(){
-      return currentUser.profile;
-    }
-
-    function getCurrentUserObjectives(){
-      return currentUser.objectives;
-    }
-
     function signIn(){
-      currentUser.id = "yeehaa123";
-      $state.go('app.objectives.user');
+      var deferred = $q.defer();
+      users.getUser().then(function(user){
+        session.user = user;
+        $state.go('app.objectives.user');
+        deferred.resolve();
+      });
+
+      return deferred.promise;
     }
 
     function signOut(){
-      currentUser.id= undefined;
+      session.user = undefined;
       $state.go('signin');
     }
   });

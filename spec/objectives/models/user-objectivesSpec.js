@@ -1,6 +1,6 @@
 (function(){
 
-  var objectives, scope;
+  var objectives, scope, $rootScope, $q;
 
   describe("userObjectives Service", function(){
 
@@ -47,7 +47,7 @@
         var objective;
 
         beforeEach(function(){
-          objectives.getObjective('123', '000_HTML').then(function(data){
+          objectives.getObjective(mockUser, '000_HTML').then(function(data){
             objective = data;
           });
           $rootScope.$digest();
@@ -77,15 +77,16 @@
 
   var mockUsers = {
     getUser: function(){
-      return {
-        objectives: {
-          "000_HTML": {
-            added: true,
-            completed: false
-          }
+      return mockUser;
+    }
+  };
 
-        }
-      };
+  var mockUser = {
+    objectives: {
+      "000_HTML": {
+        added: true,
+        completed: false
+      }
     }
   };
 

@@ -1,20 +1,14 @@
 (function(){
   var app = angular.module('unacademic.objectives');
 
-  app.controller('UserObjectives', function(authentication, user){
+  app.controller('UserObjectives', function(authentication, session){
 
     var vm = this;
 
-    vm.all = user.objectives;
+    vm.all = session.user.objectives;
     vm.empty = function(){
-      return Object.keys(user.objectives).length < 1;
+      return Object.keys(vm.all).length < 1;
     };
-
-    vm.signIn = signIn;
-
-    function signIn(){
-      authentication.signIn();
-    }
 
     return vm;
   });

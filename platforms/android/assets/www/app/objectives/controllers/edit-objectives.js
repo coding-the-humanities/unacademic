@@ -1,7 +1,7 @@
 (function(){
   var app = angular.module('unacademic.objectives');
 
-  app.controller('EditObjectives', function(authentication, user, objectives){
+  app.controller('EditObjectives', function(authentication, session, objectives){
 
     var vm = this;
 
@@ -17,14 +17,13 @@
 
     function add(id){
       objectives[id].added = true;
-      user.addObjective(id);
+      session.user.addObjective(id);
     }
 
     function remove(id){
       objectives[id].added = false;
-      user.removeObjective(id);
+      session.user.removeObjective(id);
     }
-
 
     return vm;
   });

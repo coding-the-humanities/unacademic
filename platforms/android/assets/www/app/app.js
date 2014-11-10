@@ -14,12 +14,12 @@
 
   app.value('FIREBASE_REF','https://mobile-app.firebaseio.com/');
   app.value('userSession',{});
-  app.value('currentUser',{});
+  app.value('session',{});
   app.value('profile',{});
   app.constant('faker', faker);
   app.constant('_', _);
 
-  app.run(function($ionicPlatform, $rootScope, userSession) {
+  app.run(function($ionicPlatform, $rootScope, session, $state) {
     $ionicPlatform.ready(function() {
 
       if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -29,6 +29,10 @@
         StatusBar.styleDefault();
       }
     });
+
+    if(!session.user){
+      $state.go('signin');
+    }
 
     $rootScope.$on('$firebaseSimpleLogin:login', function(event, user) {
       console.log(user);

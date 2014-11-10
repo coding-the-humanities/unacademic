@@ -14,16 +14,27 @@
       controller: "UserObjectives as objectives"
     });
 
+    $stateProvider.state('app.objectives.edit', {
+      url: '/edit',
+      templateUrl: 'app/objectives/views/edit-objectives.html',
+      controller: "EditObjectives as objectives",
+      resolve: {
+        objectives: function(userObjectives){
+          return userObjectives.getAllObjectives();
+        }
+      }
+    });
+
     $stateProvider.state('app.objectives.detail', {
       url: '/:objectiveId',
       templateUrl: 'app/objectives/views/objectives-detail.html',
       controller: "ObjectiveDetails as objective",
       resolve: {
-        objective: function($stateParams, $q, userObjectives, currentUser, Objective){
+        objective: function($stateParams, $q, userObjectives, session, Objective){
           var deferred = $q.defer();
           var objectiveId = $stateParams.objectiveId;
 
-          userObjectives.getObjective(currentUser.id, objectiveId).then(function(data){
+          userObjectives.getObjective(session.user, objectiveId).then(function(data){
             var objective = new Objective(data);
             deferred.resolve(objective);
           });
@@ -32,15 +43,5 @@
       }
     });
 
-    $stateProvider.state('app.objectives.edit', {
-      url: '/edit',
-      templateUrl: 'app/objectives/views/edit-objectives.html',
-      controller: "EditObjectives as objectives",
-      resolve: {
-        objectives: function(userObjectives, currentUser){
-          return userObjectives.getAllObjectives(currentUser.id);
-        }
-      }
-    });
   });
 })();

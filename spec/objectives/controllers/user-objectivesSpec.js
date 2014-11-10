@@ -12,8 +12,10 @@ describe("Objectives Controller", function () {
 
       objectives = $controller("UserObjectives", {
         authentication: {},
-        user: {
-          objectives: {}
+        session: {
+          user: {
+            objectives: {}
+          }
         }
       });
     });

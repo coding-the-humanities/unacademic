@@ -2,12 +2,11 @@
   var app = angular.module('unacademic.authentication');
 
 
-  app.controller('Signin', function(authentication, currentUser){
+  app.controller('Signin', function(authentication){
 
     var vm = this;
 
     vm.pageTitle = "Sign in";
-    vm.user = currentUser;
 
     vm.signIn = function(){
       authentication.signIn();

@@ -2,39 +2,32 @@
 
   var app = angular.module('unacademic.users');
 
-  app.service('users', function($q, User, faker, _){
-    var testUser = {};
-
-    var profile = {
-      id: 'yeehaa123',
-      name: {
-        first: 'Jan Hein',
-        last: 'Hoogstad'
-      },
-      avatar_url: 'img/avatar.jpg',
-      portrait_url: 'img/yeehaa.jpg',
-      student_number: 123456789,
-      level: 100,
-      study: 'Philosophy',
-      role: 'admin'
-    };
-
-    var roles = ['dwarf', 'troll', 'mage', 'witch'];
-    var studies = ['Philosophy', 'Musicology', 'History', 'Dutch'];
-
-    var objectives = {};
-
-    profile.name.full = profile.name.first + " " + profile.name.last;
-    testUser.profile = profile;
-    testUser.objectives = objectives;
+  app.service('users', function($q, $http, User){
 
     return {
-      getUser: function(){
-       var user = new User(testUser);
-       return user;
-      },
+      getUser: getUser,
+      getUsers: getUsers
     };
 
+    function getUser(){
+      var deferred = $q.defer();
+      getUsers().then(function(users){
+        var user = users[1];
+        deferred.resolve(user);
+      });
+      return deferred.promise;
+    }
+
+    function getUsers(){
+      var deferred = $q.defer();
+      $http.get('api/users.json').then(function(response){
+        var users = response.data.map(function(user){
+          return new User(user);
+        });
+        deferred.resolve(users);
+      });
+      return deferred.promise;
+    }
 
     function generateUsers(){
       var users = [];
@@ -52,6 +45,8 @@
     }
 
     function generateProfile(index){
+      var roles = ['dwarf', 'troll', 'mage', 'witch'];
+      var studies = ['Philosophy', 'Musicology', 'History', 'Dutch'];
       var profile = {
         name: {
           first: faker.name.firstName(),

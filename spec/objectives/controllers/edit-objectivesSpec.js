@@ -23,7 +23,9 @@ describe("Edit Objectives Controller", function () {
         objectives: {
           '000_HTML': {}
         },
-        user: mockUser
+        session: {
+          user: mockUser
+        }
       });
     });
   });

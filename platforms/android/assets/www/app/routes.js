@@ -8,12 +8,6 @@
       url: '',
       abstract: true,
       templateUrl: './app/home.html',
-      resolve: {
-        user: function(currentUser, users){
-          var user = users.getUser(currentUser.id);
-          return user;
-        }
-      }
     });
 
   });
