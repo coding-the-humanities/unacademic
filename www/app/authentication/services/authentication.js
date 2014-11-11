@@ -9,7 +9,7 @@
 
     function signIn(){
       var deferred = $q.defer();
-      users.getUser().then(function(user){
+      users.getUser('Mikel39').then(function(user){
         session.user = user;
         $state.go('app.objectives.user');
         deferred.resolve();

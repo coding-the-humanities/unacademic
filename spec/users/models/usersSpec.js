@@ -11,7 +11,17 @@
         };
       }
 
-      var mockUsers = ["bill", "ted", "claus"];
+      var mockUsers = {
+        bill: {
+          name: "Bill"
+        },
+        ted: {
+          name: "Ted"
+        },
+        jack: {
+          name: "Jack"
+        }
+      };
 
       module("unacademic.users", function($provide){
         $provide.value('User', MockUser);
@@ -32,17 +42,34 @@
     });
 
     describe("user retrieval", function(){
-      var user;
+      describe("valid id", function(){
+        var user;
 
-      beforeEach(function(){
-        service.getUser().then(function(data){
-          user = data;
+        beforeEach(function(){
+          service.getUser('bill').then(function(data){
+            user = data;
+          });
+          $httpBackend.flush();
         });
-        $httpBackend.flush();
+
+        it("gets a user", function(){
+          expect(user).toBeDefined();
+        });
       });
 
-      it("gets a user", function(){
-        expect(user).toBeDefined();
+      describe("invalid id", function(){
+        var user;
+
+        beforeEach(function(){
+          service.getUser('kill').then(function(data){
+            user = data;
+          });
+          $httpBackend.flush();
+        });
+
+        it("gets a user", function(){
+          expect(user).not.toBeDefined();
+        });
       });
     });
 
