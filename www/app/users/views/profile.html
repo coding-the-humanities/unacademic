@@ -31,7 +31,7 @@
         {{ user.study }}
       </div>
     </section>
-      <button id="sign-out" class="button button-block button-dark" ng-click="user.signOut()()">
+      <button ng-show="user.isCurrentUser()" id="sign-out" class="button button-block button-dark" ng-click="user.signOut()()">
         <i class="ion-social-github"> </i>Sign Out
       </button>
   </ion-content>

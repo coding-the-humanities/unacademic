@@ -1,14 +1,18 @@
 (function(){
   var app = angular.module('unacademic.users');
 
-  app.controller('Profile', function(authentication, session){
+  app.controller('Profile', function(authentication, user, session){
 
     var vm = this;
 
     vm.signIn = signIn;
     vm.signOut = signOut;
 
-    setObjectKeysToVM(session.user.profile);
+    vm.isCurrentUser = function(){
+      return user.profile.id === session.user.profile.id;
+    }
+
+    setObjectKeysToVM(user.profile);
 
     return vm;
 
