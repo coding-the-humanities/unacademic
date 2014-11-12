@@ -3,6 +3,12 @@
 
   app.controller('Users', function(users){
     var vm = this;
-    vm.all = users;
+    var keys = Object.keys(users);
+
+    var usersArray = keys.map(function(key){
+      return users[key];
+    });
+
+    vm.all = usersArray;
   });
 })();

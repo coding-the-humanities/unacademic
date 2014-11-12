@@ -9,13 +9,13 @@
   </div>
   <section ng-show="task.showTask">
     <div class="item item-text-wrap">
-      {{task.description}}
+      <p>{{task.description}}</p>
     </div>
     <div class="item item-divider">
       Instructions
     </div>
     <div ng-repeat="instruction in task.instructions" class="item item-text-wrap">
-      {{instruction}}
+      <p>{{instruction}}</p>
     </div>
     <div class="item item-divider">
       Resources

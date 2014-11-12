@@ -8,9 +8,7 @@
     vm.signIn = signIn;
     vm.signOut = signOut;
 
-    vm.isCurrentUser = function(){
-      return user.profile.id === session.user.profile.id;
-    }
+    vm.isCurrentUser = (user.profile.id === session.user.profile.id);
 
     setObjectKeysToVM(user.profile);
 

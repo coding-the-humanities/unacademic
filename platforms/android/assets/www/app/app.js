@@ -13,9 +13,7 @@
   ]);
 
   app.value('FIREBASE_REF','https://mobile-app.firebaseio.com/');
-  app.value('userSession',{});
-  app.value('session',{});
-  app.value('profile',{});
+  app.value('session', {});
   app.constant('faker', faker);
   app.constant('_', _);
 
@@ -30,10 +28,6 @@
       }
     });
 
-    if(!session.user){
-      $state.go('signin');
-    }
-
     $rootScope.$on('$firebaseSimpleLogin:login', function(event, user) {
       console.log(user);
     });
@@ -44,5 +38,9 @@
 
     $rootScope.$on('$firebaseSimpleLogin:logout', function(event) {
     });
+
+    if(!session.user){
+      $state.go('signin');
+    }
   });
 })();
