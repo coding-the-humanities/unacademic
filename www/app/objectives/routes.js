@@ -16,8 +16,30 @@
 
     $stateProvider.state('app.objectives.edit', {
       url: '/edit',
-      templateUrl: 'app/objectives/views/edit-objectives.html',
-      controller: "EditObjectives as objectives",
+      templateUrl: 'app/objectives/views/edit-user-objectives.html',
+      controller: "EditUserObjectives as objectives",
+      resolve: {
+        objectives: function(userObjectives){
+          return userObjectives.getAllObjectives();
+        }
+      }
+    });
+
+    $stateProvider.state('app.objectives.add', {
+      url: '/add',
+      templateUrl: 'app/objectives/views/add-objective.html',
+      controller: "AddObjective as objectives",
+      resolve: {
+        objectives: function(userObjectives){
+          return userObjectives.getAllObjectives();
+        }
+      }
+    });
+
+    $stateProvider.state('app.objectives.new', {
+      url: '/new',
+      templateUrl: 'app/objectives/views/new-objective.html',
+      controller: "AddObjective as objectives",
       resolve: {
         objectives: function(userObjectives){
           return userObjectives.getAllObjectives();

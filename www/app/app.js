@@ -43,4 +43,8 @@
       $state.go('signin');
     }
   });
+
+  app.controller('App', function(){
+    var vm = this;
+  });
 })();

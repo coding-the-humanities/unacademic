@@ -18,7 +18,7 @@ describe("Edit Objectives Controller", function () {
       addObjectiveToUser = spyOn(mockUser, 'addObjective');
       removeObjectiveFromUser = spyOn(mockUser, 'removeObjective');
 
-      objectives = $controller("EditObjectives", {
+      objectives = $controller("EditUserObjectives", {
         authentication: {},
         objectives: {
           '000_HTML': {}

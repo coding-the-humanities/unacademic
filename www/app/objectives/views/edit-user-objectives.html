@@ -1,7 +1,8 @@
 <ion-view title="Objectives">
   <ion-content class="padding-horizontal">
 
-    <section ng-show="objectives.all" class="profile list card" ng-repeat="(key, value) in objectives.all | groupBy: 'level'">
+    <section class="profile list card" 
+             ng-repeat="(key, value) in objectives.all | groupBy: 'level'">
 
       <section class="level">
         <ion-item class="item-divider item-dark">
@@ -18,7 +19,7 @@
         </ion-item>
       </section>
     </section>
-    <a ui-sref="app.objectives.add" class="button button-block button-dark">Add New</a>
+    <a ng-click="objectives.showOptions()" class="button button-block button-positive">Curate</a>
     <a ui-sref="app.objectives.user" class="button button-block button-assertive">Done</a>
   </ion-content>
 </ion-view>

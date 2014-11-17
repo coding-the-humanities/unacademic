@@ -6,7 +6,6 @@
     </button>
 
     <section ng-hide="objectives.empty()" class="profile">
-
       <section class="list card level" ng-repeat="(key, value) in objectives.all | groupBy: 'level'">
         <ion-item class="item-divider item-dark">
         Level {{ key }}

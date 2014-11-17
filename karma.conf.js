@@ -39,7 +39,8 @@ module.exports = function(config) {
       'app/objectives/models/user-objectives.js',
       'app/objectives/models/objectives.js',
       'app/objectives/controllers/user-objectives.js',
-      'app/objectives/controllers/edit-objectives.js',
+      'app/objectives/controllers/edit-user-objectives.js',
+      'app/objectives/controllers/add-objective.js',
       'app/objectives/controllers/objective-details.js',
 
       'app/news/news.js',

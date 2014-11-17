@@ -8,6 +8,7 @@
       url: '',
       abstract: true,
       templateUrl: './app/home.html',
+      controller: 'App as app'
     });
 
   });

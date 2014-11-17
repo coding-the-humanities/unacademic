@@ -55,3 +55,20 @@ $font-family-base:                $font-family-sans-serif !default;
   right: 0;
 }
 
+label.objective-title {
+  input {
+    text-align: right;
+  }
+}
+
+.range {
+  flex: 1 0 175px;
+  padding: 0;
+  input {
+    margin: 0;
+  }
+}
+
+.item-stacked-label, .item-floating-label {
+  background-color: $light;
+}
