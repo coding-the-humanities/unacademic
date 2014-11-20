@@ -3,7 +3,7 @@
 ## GET /api/v1/login
 + Response 200 (application/json)
 {
-    "data":{
+    "session":{
         "id":"peterpeerdeman",
         "token":"CQYABgdVWlQAVgQKUQBRUVAEAABUAFMABVVWBVYODwkAVVVX",
         "lastActive":1412242276282
@@ -19,29 +19,29 @@
     Authorization: Bearer CQYABgdVWlQAVgQKUQBRUVAEAABUAFMABVVWBVYODwkAVVVX
 + Response 200 (application/json)
 {
-    "data":{
+    "session":{
         "id":"peterpeerdeman"
     }
 }
 + Response 401
 
-## GET /api/v1/profiles
+## GET /api/v1/users
 + Response 200 (application/json)
 {
-    "data":[
+    "users":[
         {
-            ... profiledata ...
+            ... userdata ...
         },
         {
-            ... profiledata ...
+            ... userdata ...
         }
     ]
 }
 
-## GET /api/v1/profiles/:id
+## GET /api/v1/users/:id
 + Response 200 (application/json)
 {
-    "data":{
+    "user":{
         "id":"yeehaa",
         "first_name": "Jan Hein",
         "last_name": "Hoogstad",
@@ -53,10 +53,10 @@
     }
 }
 
-## GET /api/v1/profiles/:profileId/paths/:pathId/places
+## GET /api/v1/users/:userId/paths/:pathId/places
 + Response 200 (application/json)
 {
-    "data":[
+    "place":[
         {
             "id":123123,
             "name": "CSS"
@@ -64,7 +64,7 @@
     ]
 }
 
-## POST /api/v1/profiles/:profileId/paths/:pathId/places/add
+## POST /api/v1/users/:userId/paths/:pathId/places/add
 + Headers
     Authorization: Bearer CQYABgdVWlQAVgQKUQBRUVAEAABUAFMABVVWBVYODwkAVVVX
 + Request (application/json)
@@ -73,24 +73,24 @@
 }
 + Response 201 (application/json)
 
-## DELETE /api/v1/profiles/:profileId/paths/:pathId/places/:id
+## DELETE /api/v1/users/:userId/paths/:pathId/places/:id
 + Headers
     Authorization: Bearer CQYABgdVWlQAVgQKUQBRUVAEAABUAFMABVVWBVYODwkAVVVX
 + Response 204 (application/json)
 
-## POST /api/v1/profiles/:profileId/paths/:pathId/places/:id/complete_objective
+## POST /api/v1/users/:userId/paths/:pathId/places/:placesId/objectives/:objectiveId
 + Headers
     Authorization: Bearer CQYABgdVWlQAVgQKUQBRUVAEAABUAFMABVVWBVYODwkAVVVX
 + Request (application/json)
 {
-    "id":123123
+    "completed":true
 }
 + Response 201 (application/json)
 
 ## GET /api/v1/paths 
 + Response 200 (application/json)
 {
-    "data":[
+    "paths":[
         {
             "id":123123,
             "curator_full_name":"Jan Hein",
@@ -104,7 +104,6 @@
 }
 
 ## POST /api/v1/paths
-## PUT /api/v1/paths
 + Request (application/json)
 {
     "curator_id":123123,
@@ -112,14 +111,36 @@
     "version": "1.2.3",
     "license": "MIT",
     "keywords": ["web","tech"],
-    "image_url": "imagelocation.jpg"
+    "assets": [
+        {
+            "type":"image",
+            "url":"imagelocation.jpg"
+        }
+    ]
+}
++ Response 201
+
+## PUT /api/v1/paths/:pathId
++ Request (application/json)
+{
+    "curator_id":123123,
+    "description": "A path about web technologies",
+    "version": "1.2.3",
+    "license": "MIT",
+    "keywords": ["web","tech"],
+    "assets": [
+        {
+            "type":"image",
+            "url":"imagelocation.jpg"
+        }
+    ]
 }
 + Response 200
 
-## GET /api/v1/paths/:pathId/
+## GET /api/v1/paths/:pathId
 + Response 200 (application/json)
 {
-    "data": {
+    "path": {
         "id":123123,
         "curator_full_name":"Jan Hein",
         "curator_id":123123,
@@ -156,10 +177,10 @@
     "keywords": ["web","tech"]
 }
 
-## POST /api/v1/paths/:pathId/places/add
+## PUT /api/v1/paths/:pathId/places/:placeId
 + Request (application/json)
 {
-    "id":123123
+    "added":true
 }
 + Response 201
 
