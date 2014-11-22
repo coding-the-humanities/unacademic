@@ -1,21 +1,21 @@
 (function(){
 
-  describe("Objective Service", function(){
+  describe("Place Service", function(){
 
-    var objective;
+    var place;
 
     beforeEach(function () {
 
       module("unacademic.objectives");
 
       inject(function($injector){
-        Objective = $injector.get('Objective');
+        Place = $injector.get('Place');
         Task = $injector.get('Task');
       });
     });
 
     describe("properties", function(){
-      var objective;
+      var place;
 
       beforeEach(function(){
         var data = {
@@ -34,25 +34,25 @@
           ]
         };
 
-        objective= new Objective(data);
+        place= new Place(data);
       });
 
 
       it("has the right properties", function(){
-        expect(objective.title).toEqual("HTML");
-        expect(objective.level).toEqual(0);
-        expect(objective.description.full).toContain("Hopsakidee");
-        expect(objective.description.full).toContain("Hopsakidee");
-        expect(objective.tasks[0] instanceof Task).toBeTruthy();
+        expect(place.title).toEqual("HTML");
+        expect(place.level).toEqual(0);
+        expect(place.description.full).toContain("Hopsakidee");
+        expect(place.description.full).toContain("Hopsakidee");
+        expect(place.tasks[0] instanceof Task).toBeTruthy();
       });
 
       describe("categories", function(){
         it("has one out of five categories as a property", function(){
-          expect(objective.category).toBeTruthy();
+          expect(place.category).toBeTruthy();
         });
 
         it("has the right color code", function(){
-          expect(objective.color).toEqual('assertive');
+          expect(place.color).toEqual('assertive');
         });
 
         it("has one out of five categories as a property", function(){
@@ -63,22 +63,22 @@
             category: "Novels"
           };
 
-          objective= new Objective(data);
-          expect(objective.category).toBeFalsy();
+          place= new Place(data);
+          expect(place.category).toBeFalsy();
         });
 
       });
 
       describe("completion", function(){
         it("should know what percentage of tasks is completed", function(){
-          expect(objective.completion).toEqual(25);
+          expect(place.completion).toEqual(25);
         });
       });
 
       describe("points", function(){
 
         it("defaults to zero points", function(){
-          expect(objective.points).toEqual(0);
+          expect(place.points).toEqual(0);
         });
 
         it("set the points if provided", function(){
@@ -87,8 +87,8 @@
             level: 10,
             points: 100
           };
-          objective= new Objective(data);
-          expect(objective.points).toEqual(100);
+          place= new Place(data);
+          expect(place.points).toEqual(100);
         });
 
         it("defaults to zero points", function(){
@@ -101,8 +101,8 @@
             title: "HTML",
             level: 0
           };
-          objective= new Objective(data);
-          expect(objective.id).toEqual("000_HTML");
+          place= new Place(data);
+          expect(place.id).toEqual("000_HTML");
         });
 
         it("generates the correct id for numbers from 10 to 100", function(){
@@ -110,8 +110,8 @@
             title: "HTML",
             level: 10
           };
-          objective = new Objective(data);
-          expect(objective.id).toEqual("010_HTML");
+          place = new Place(data);
+          expect(place.id).toEqual("010_HTML");
         });
 
         it("generates the correct id for numbers from 100 to 1000", function(){
@@ -119,8 +119,8 @@
             title: "HTML",
             level: 100
           };
-          objective = new Objective(data);
-          expect(objective.id).toEqual("100_HTML");
+          place = new Place(data);
+          expect(place.id).toEqual("100_HTML");
         });
 
         it("generates the correct id for multi word titles", function(){
@@ -128,8 +128,8 @@
             title: "HTML is cool",
             level: 100
           };
-          objective = new Objective(data);
-          expect(objective.id).toEqual("100_HTML_is_cool");
+          place = new Place(data);
+          expect(place.id).toEqual("100_HTML_is_cool");
         });
       });
 
@@ -141,8 +141,8 @@
             title: "HTML",
             level: 0
           };
-          objective = new Objective(data);
-          baseUrl = objective.baseUrl;
+          place = new Place(data);
+          baseUrl = place.baseUrl;
         });
 
         it("generates the correct base url", function(){
@@ -154,8 +154,8 @@
             title: "HTML",
             level: 0
           };
-          objective= new Objective(data);
-          expect(objective.url).toEqual(baseUrl + "/logo.svg");
+          place= new Place(data);
+          expect(place.url).toEqual(baseUrl + "/logo.svg");
         });
       });
     });

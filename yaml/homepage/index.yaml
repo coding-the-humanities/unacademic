@@ -1,0 +1,178 @@
+title: Homepage courses
+
+locations:
+    level000:
+        level: level 000
+        levelclass: level000
+        currentweek: false
+        date: 28 October 2014
+        time: 13:00 - 16:00
+        location: UvA (OMHP EK.01)
+        street: Oudemanhuispoort 4 - 6
+        city: Amsterdam
+        urlmaps: https://www.google.nl/maps/place/Oudemanhuispoort+4,+1012+CN+Amsterdam/@52.3693635,4.8955403,18z/data=!3m1!4b1!4m2!3m1!1s0x47c609bf77e1b941:0x7def30913c530129
+
+    level001:
+        level: level 001
+        levelclass: level001
+        currentweek: false
+        date: 4 November 2014
+        time: 13:00 - 16:00
+        location: LUSTlab
+        street: Paviljoensgracht 20
+        city: Den Haag
+        urlmaps: https://www.google.nl/maps/place/GEMAK/@52.074459,4.31205,17z/data=!4m5!1m2!2m1!1sLustlab+Paviljoensgracht+20-24!3m1!1s0x0000000000000000:0x05d14304759f1055
+
+    level002:
+        level: level 002
+        levelclass: level002
+        currentweek: false
+        date: 11 November 2014
+        time: 13:00 - 17:00
+        location: UvA (OMHP EK.01)
+        street: Oudemanhuispoort 4 - 6
+        city: Amsterdam
+        urlmaps: https://www.google.nl/maps/place/Oudemanhuispoort+4,+1012+CN+Amsterdam/@52.3693635,4.8955403,18z/data=!3m1!4b1!4m2!3m1!1s0x47c609bf77e1b941:0x7def30913c530129
+
+    level003:
+        level: level 003
+        levelclass: level003
+        currentweek: true
+        date: 18 November 2014
+        time: 13:00 - 16:00
+        location: UvA Vendelstraat
+        street: Vendelstraat (see Slack-channel)
+        city: Amsterdam
+        urlmaps: https://www.google.nl/maps/dir/52.3689008,4.8958591/52.3689587,4.8958847/@52.3688411,4.8938477,17z/data=!4m2!4m1!3e2
+
+    level004:
+        level: level 004
+        levelclass: level004
+        currentweek: false
+        date: 25 November 2014
+        time: 13:00 - 17:00
+        location: UvA (OMHP EK.01)
+        street: Oudemanhuispoort 4 - 6
+        city: Amsterdam
+        urlmaps: https://www.google.nl/maps/place/Oudemanhuispoort+4,+1012+CN+Amsterdam/@52.3693635,4.8955403,18z/data=!3m1!4b1!4m2!3m1!1s0x47c609bf77e1b941:0x7def30913c530129
+
+    level005:
+        level: level 005
+        levelclass: level005
+        currentweek: false
+        date: 2 December 2014
+        time: 10:00 - 13:00
+        location: UvA (TBA)
+        street: Oudemanhuispoort 4 - 6
+        city: Amsterdam
+        urlmaps: https://www.google.nl/maps/place/Oudemanhuispoort+4,+1012+CN+Amsterdam/@52.3693635,4.8955403,18z/data=!3m1!4b1!4m2!3m1!1s0x47c609bf77e1b941:0x7def30913c530129
+
+    level006:
+        level: level 006
+        levelclass: level006
+        currentweek: false
+        date: 9 December 2014
+        time: 13:00 - 16:00
+        location: Sandberg
+        street: Fred. Roeskestraat 98
+        city: Amsterdam
+        urlmaps: https://www.google.nl/maps/place/Fred.+Roeskestraat+98A,+1076+ED+Amsterdam/@52.3413035,4.8599852,15z/data=!4m2!3m1!1s0x47c5e1fc2a55fbe9:0xe8018c026ad7b37f?sa=X&ei=pOhUVO64IoHQOprvgbgP&ved=0CCAQ8gEwAA
+
+level000:
+  - title: HTML
+    classtag: html
+    summary: HTML gives directions to the web browser on what content to display. It uses a set of elements to identify content types.
+    url: 000_HTML
+
+  - title: CSS
+    classtag: css
+    summary: Learn about styling web pages with cascading style sheets.
+    url: 000_CSS
+
+  - title: Gists
+    classtag: gist
+    summary: Share your files in a gist.
+    url: 000_Gists
+
+  - title: City Walk
+    classtag: cityWalk
+    summary: Get some last contact with the real world, before you disappear into its virtual counterpart.
+    url: 000_City_Walk
+
+level001:
+  - title: Dev tools
+    classtag: devTools
+    summary: A very important tool to know is the Devtools in browsers. It is used for many things like bugtesting or experimenting.
+    url: 001_Dev_Tools
+
+  - title: DOM
+    classtag: dom
+    summary: The DOM -Document Object Model - is an interface for HTML documents.
+    url: 001_DOM
+
+  - title: JSON
+    classtag: json
+    summary: JSON is an easily parsed and widely used data format.
+    url: 001_JSON
+
+  - title: Templating
+    classtag: webTemplates
+    summary: HTML5 allows for template elements. A template is best described as a mold with a fixed layout, which can be repeated multiple times.
+    url: 001_Templating
+
+  - title: Photostack
+    classtag: photoStack
+    summary: Select photos, create a JSON-object and make a template.
+    url: 001_Photostack
+
+level002:
+  - title: Web Architecture
+    classtag: webArchitecture
+    summary: Http requests and communicating with the server.
+    url: 002_Web_Architecture
+
+  - title: Web Components
+    classtag: webComponents
+    summary: Web components are the future of web development, but what are they?
+    url: 002_Web_Components
+
+  - title: Custom Elements
+    classtag: externalCustomElements
+    summary: Web components provide an easy way to share and reuse code.
+    url: 002_Custom_Elements
+
+  - title: Communication Between Components
+    classtag: communicationBetweenElements
+    summary: Under construction
+    url: under_construction
+
+  - title: From Idea to Component
+    classtag: fromIdeaToComponent
+    summary: Transform one of your ideas into a real webcomponent.
+    url: 002_From_Idea_To_Component
+
+level003:
+  - title: Forms
+    classtag: forms
+    summary: Forms are used to collect user input, like names, e-mail addresses, selected answers or messages.
+    url: 003_Forms
+
+  - title: Data structures
+    classtag: dataStructures
+    summary: Data comes in many forms, and data structures equally so.
+    url: 003_Data_Structures
+
+  - title: Component Lifecycle
+    classtag: componentLifecycle
+    summary: Just like organisms have a certain lifecycle, webcomponents have a lifecycle of their own.
+    url: 003_Component_Lifecycle
+
+  - title: Scripts
+    classtag: scripts
+    summary: A script is a small bit of code that allows for dynamic pages.
+    url: 003_Scripts
+
+  - title: From Paper to Polymer
+    classtag: finalAssignment
+    summary: From paper to Polymer, taking mocking up to a next level.
+    url: 003_From_Paper_to_Polymer

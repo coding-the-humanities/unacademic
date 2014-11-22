@@ -1,19 +1,21 @@
-describe("Signin Controller", function () {
+(function(){
+  describe("Signin Controller", function () {
 
-  var ctrl, $timeout;
+    var ctrl, $timeout;
 
-  beforeEach(function () {
+    beforeEach(function () {
 
-    module("unacademic.authentication");
+      module("unacademic.authentication");
 
-    inject(function ($rootScope, $controller, $q, _$timeout_) {
-      $scope = $rootScope.$new();
-      $timeout = _$timeout_;
+      inject(function ($rootScope, $controller, $q, _$timeout_) {
+        $scope = $rootScope.$new();
+        $timeout = _$timeout_;
 
-      vm = $controller("Signin", {
-        currentUser: {},
-        authentication: {}
+        vm = $controller("Signin", {
+          currentUser: {},
+          authentication: {}
+        });
       });
     });
   });
-});
+})();

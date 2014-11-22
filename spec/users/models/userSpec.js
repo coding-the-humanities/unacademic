@@ -5,14 +5,14 @@
     var User, $rootScope;
 
     beforeEach(function () {
-      var mockObjectives = {
-        getObjectives: function(){
+      var mockPlaces = {
+        getAll: function(){
           return $q.when(testObjectives);
         }
       };
 
       module("unacademic.users", function($provide){
-        $provide.value('objectives', mockObjectives);
+        $provide.value('places', mockPlaces);
       });
 
       inject(function($injector){

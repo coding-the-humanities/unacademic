@@ -7825,3 +7825,15 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .user {
   left: 0;
   right: 0; }
+
+label.objective-title input {
+  text-align: right; }
+
+.range {
+  flex: 1 0 175px;
+  padding: 0; }
+  .range input {
+    margin: 0; }
+
+.item-stacked-label, .item-floating-label {
+  background-color: #fff; }

@@ -1,11 +1,11 @@
 (function(){
   var app = angular.module('unacademic.objectives');
 
-  app.controller('EditUserObjectives', function(authentication, $state, $ionicActionSheet, session, objectives){
+  app.controller('EditUserPlaces', function(authentication, $state, $ionicActionSheet, session, places){
 
     var vm = this;
 
-    vm.all = objectives;
+    vm.all = places;
 
     vm.signIn = signIn;
     vm.add = add;
@@ -25,10 +25,10 @@
         },
         buttonClicked: function(index) {
           if(index === 0){
-            $state.go('app.objectives.new');
+            $state.go('app.places.new');
           }
           if(index === 1){
-            $state.go('app.objectives.add');
+            $state.go('app.places.add');
           }
           if(index === 2){
             $state.go('app.profile');
@@ -43,12 +43,12 @@
     }
 
     function add(id){
-      objectives[id].added = true;
+      places[id].added = true;
       session.user.addObjective(id);
     }
 
     function remove(id){
-      objectives[id].added = false;
+      places[id].added = false;
       session.user.removeObjective(id);
     }
 

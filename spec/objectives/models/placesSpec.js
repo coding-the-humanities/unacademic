@@ -1,7 +1,7 @@
 (function(){
-  describe("Objectives Service", function(){
+  describe("Places Service", function(){
     var service;
-    var Objective = function(){
+    var Place = function(){
     };
 
     beforeEach(function () {
@@ -9,15 +9,15 @@
       module("unacademic.objectives");
 
       inject(function($injector){
-        service = $injector.get('objectives', {
-          Objective: Objective
+        service = $injector.get('places', {
+          Place: Place
         });
       });
     });
 
     xdescribe("objects retrieval", function(){
-      it("gets all objectives", function(){
-        var objectives = service.getObjectives();
+      it("gets all places", function(){
+        var places = service.getAll();
       });
     });
   });

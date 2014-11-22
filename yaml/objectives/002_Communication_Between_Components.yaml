@@ -9,7 +9,6 @@ technologies:
 
 description:
   full: >
-
     By default, web Components are encapsulated. This means they function
     completely on their own. But what if you actually want them to communicate
     with each other? Because of their encapsulation we need to explicitly tell

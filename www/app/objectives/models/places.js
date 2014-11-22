@@ -2,20 +2,20 @@
 
   var app = angular.module('unacademic.objectives');
 
-  app.service('objectives', function($http, $q, Objective){
+  app.service('places', function($http, $q, Place){
     return {
-      getObjectives: getObjectives
+      getAll: getAll
     };
 
-    function getObjectives(){
+    function getAll(){
       var deferred = $q.defer();
       $http.get('./api/objectives.json').success(function(data){
-        var objectives = {};
+        var places = {};
         var keys = Object.keys(data);
         keys.forEach(function(key){
-          objectives[key] = new Objective(data[key]);
+          places[key] = new Place(data[key]);
         });
-        deferred.resolve(objectives);
+        deferred.resolve(places);
       });
       return deferred.promise;
     }

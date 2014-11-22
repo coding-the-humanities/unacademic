@@ -1,8 +1,8 @@
 (function() {
   var app = angular.module('unacademic.objectives');
 
-  app.service('Objective', function(Task) {
-    class Objective {
+  app.service('Place', function(Task) {
+    class Place {
       constructor({title, level, category, points, description, tasks, resources}){
         this.title = title;
         this.level = level;
@@ -75,6 +75,6 @@
       }
     }
 
-    return Objective;
+    return Place;
   });
 })();

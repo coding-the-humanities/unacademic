@@ -2,7 +2,7 @@
 
   app = angular.module('unacademic.users');
 
-  app.service('User', function($q, objectives){
+  app.service('User', function($q, places){
 
     function User(user){
       this.profile = user.profile;
@@ -17,7 +17,7 @@
     User.prototype.addObjective = function(id){
       var deferred = $q.defer();
       var self = this;
-      objectives.getObjectives().then(function(allObjectives){
+      places.getAll().then(function(allObjectives){
         var objective = allObjectives[id];
         objective.started = new Date();
         objective.completed = false;

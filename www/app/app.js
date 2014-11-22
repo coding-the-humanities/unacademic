@@ -17,7 +17,7 @@
   app.constant('faker', faker);
   app.constant('_', _);
 
-  app.run(function($ionicPlatform, $rootScope, session, $state) {
+  app.run(function($ionicPlatform, User, $rootScope, session, $state) {
     $ionicPlatform.ready(function() {
 
       if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -40,7 +40,15 @@
     });
 
     if(!session.user){
-      $state.go('signin');
+      profile = {
+        name: {
+          first: "hello",
+          last: "world"
+        },
+        id: "123"
+      };
+      session.user = new User({profile: profile, objectives: {}});
+      // $state.go('signin');
     }
   });
 

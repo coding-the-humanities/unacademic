@@ -1,48 +1,58 @@
 <ion-view title="Objectives">
   <ion-content>
-      <div class="item item-divider">
-        General Information
+    <div class="item item-divider">
+      General Information
+    </div>
+  <div class="list">
+    <label class="item item-input">
+      <span class="input-label">Title</span>
+      <input type="text" placeholder="John">
+    </label>
+    <label class="item item-input">
+      <span class="input-label">Level</span>
+      <div class="range range-positive">
+      <input type="range" min="0" max="10">
       </div>
-    <div class="list">
-      <label class="item item-input objective-title">
-        <span class="input-label">Title</span>
-        <input type="text" placeholder="John">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Level</span>
-        <div class="range range-positive">
-        <input type="range" min="0" max="10">
+    </label>
+    <label class="item item-input item-select">
+      <div class="input-label">
+        Category
+      </div>
+      <select>
+        <option>Design</option>
+        <option selected>Markup</option>
+        <option>Workflow</option>
+      </select>
+    </label>
+    <div class="item item-toggle">
+      Mandatory
+      <label class="toggle toggle-assertive">
+        <div class="track">
+          <div class="handle"></div>
         </div>
       </label>
-      <label class="item item-input item-select">
-        <div class="input-label">
-          Category
-        </div>
-        <select>
-          <option>Design</option>
-          <option selected>Markup</option>
-          <option>Workflow</option>
-        </select>
-      </label>
-      <div class="item item-toggle">
-        Mandatory
-        <label class="toggle toggle-assertive">
-          <div class="track">
-            <div class="handle"></div>
-          </div>
-        </label>
-      </div>
-      <div class="item item-divider">
-        Description
-      </div>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Summary</span>
-        <textarea rows="5" placeholder="Summary"></textarea>
-      </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Full Description</span>
-        <textarea rows="5" placeholder="Full Description"></textarea>
-      </label>
+    </div>
+    <div class="item item-divider">
+      Description
+    </div>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Summary</span>
+      <textarea rows="5" placeholder="Summary"></textarea>
+    </label>
+    <label class="item item-input item-floating-label">
+      <span class="input-label">Full Description</span>
+      <textarea rows="5" placeholder="Full Description"></textarea>
+    </label>
+    <div class="item item-divider">
+      Tasks
+    </div>
+    <div class="item" ng-repeat="task in [1,2,3]">
+      Hello
+    </div>
+    <div class="item">
+      <button class="button button-full button-assertive" ui-sref="app.objectives.addTask">
+        Add Tasks
+      </button>
     </div>
   </ion-content>
 </ion-view>

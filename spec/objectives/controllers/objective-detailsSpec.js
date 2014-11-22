@@ -1,33 +1,35 @@
-describe("ObjectiveDetails Controller", function () {
+(function(){
+  describe("ObjectiveDetails Controller", function () {
 
-  var ctrl, $timeout, objective;
+    var ctrl, $timeout, objective;
 
-  beforeEach(function () {
+    beforeEach(function () {
 
-    module("unacademic.objectives");
+      module("unacademic.objectives");
 
-    inject(function ($rootScope, $controller, $q, _$timeout_) {
-      $scope = $rootScope.$new();
-      $timeout = _$timeout_;
+      inject(function ($rootScope, $controller, $q, _$timeout_) {
+        $scope = $rootScope.$new();
+        $timeout = _$timeout_;
 
-      objective = $controller("ObjectiveDetails", {
-        objective: {
-          title: "HTML"
-        }
+        objective = $controller("ObjectiveDetails", {
+          objective: {
+            title: "HTML"
+          }
+        });
       });
     });
-  });
 
-  it("sets the objective", function(){
-    expect(objective.title).toBeDefined();
-  });
+    it("sets the objective", function(){
+      expect(objective.title).toBeDefined();
+    });
 
 
-  it("shows the description by default", function(){
-    expect(objective.showDescription).toBeFalsy();
-  });
+    it("shows the description by default", function(){
+      expect(objective.showDescription).toBeFalsy();
+    });
 
-  it("hides the description by default", function(){
-    expect(objective.tasks).toBeFalsy();
+    it("hides the description by default", function(){
+      expect(objective.tasks).toBeFalsy();
+    });
   });
-});
+})();

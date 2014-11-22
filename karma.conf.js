@@ -35,10 +35,10 @@ module.exports = function(config) {
 
 
       'app/objectives/objectives.js',
-      'app/objectives/models/objective.compiled.js',
-      'app/objectives/models/user-objectives.js',
-      'app/objectives/models/objectives.js',
-      'app/objectives/controllers/user-objectives.js',
+      'app/objectives/models/place.compiled.js',
+      'app/objectives/models/user-places.js',
+      'app/objectives/models/places.js',
+      'app/objectives/controllers/user-places.js',
       'app/objectives/controllers/edit-user-objectives.js',
       'app/objectives/controllers/add-objective.js',
       'app/objectives/controllers/objective-details.js',
