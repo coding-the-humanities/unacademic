@@ -6,7 +6,8 @@
     'angular.filter',
     'unacademic.authentication',
     'unacademic.users',
-    'unacademic.objectives',
+    'unacademic.places',
+    'unacademic.userplaces',
     'unacademic.news',
     'unacademic.tasks',
     'unacademic.cards'
@@ -47,7 +48,7 @@
         },
         id: "123"
       };
-      session.user = new User({profile: profile, objectives: {}});
+      session.user = new User({profile: profile, places: {}});
       // $state.go('signin');
     }
   });

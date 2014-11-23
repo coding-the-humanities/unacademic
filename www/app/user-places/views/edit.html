@@ -1,0 +1,25 @@
+<ion-view title="Places">
+  <ion-content class="padding-horizontal">
+
+    <section class="profile list card" 
+             ng-repeat="(key, value) in places.all | groupBy: 'level'">
+
+      <section class="level">
+        <ion-item class="item-divider item-dark">
+        Level {{ key }}
+        </ion-item>
+        <ion-item class="item-icon-right" ng-repeat="place in value">
+          {{ place.title }}
+        </div>
+        <div ng-hide="place.added" ng-click="places.add(place.id)">
+          <i class="icon ion-ios7-plus" ng-class="place.color"></i>
+        </div>
+        <div ng-show="place.added" ng-click="places.remove(place.id)">
+          <i class="icon ion-ios7-minus" ng-class="place.color"></i>
+        </ion-item>
+      </section>
+    </section>
+    <a ng-click="places.showOptions()" class="button button-block button-positive">Curate</a>
+    <a ui-sref="app.userplaces.index" class="button button-block button-assertive">Done</a>
+  </ion-content>
+</ion-view>

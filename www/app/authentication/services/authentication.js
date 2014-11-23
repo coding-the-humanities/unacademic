@@ -11,7 +11,7 @@
       var deferred = $q.defer();
       users.getUser('Mikel39').then(function(user){
         session.user = user;
-        $state.go('app.objectives.user.index');
+        $state.go('app.userplaces.index');
         deferred.resolve();
       });
 

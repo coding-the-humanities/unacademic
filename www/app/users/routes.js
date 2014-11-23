@@ -5,7 +5,7 @@
 
     $stateProvider.state('app.users', {
       url: '/users',
-      templateUrl: 'app/users/views/users.html',
+      templateUrl: 'app/users/views/index.html',
       controller: "Users as users",
       resolve: {
         users: function($q, users){

@@ -34,14 +34,16 @@ module.exports = function(config) {
       'app/users/controllers/profile.js',
 
 
-      'app/objectives/objectives.js',
-      'app/objectives/models/place.compiled.js',
-      'app/objectives/models/user-places.js',
-      'app/objectives/models/places.js',
-      'app/objectives/controllers/user-places.js',
-      'app/objectives/controllers/edit-user-objectives.js',
-      'app/objectives/controllers/add-objective.js',
-      'app/objectives/controllers/objective-details.js',
+      'app/places/places.js',
+      'app/places/models/place.compiled.js',
+      'app/places/models/places.js',
+      'app/places/controllers/add.js',
+      'app/places/controllers/details.js',
+
+      'app/user-places/user-places.js',
+      'app/user-places/models/user-places.js',
+      'app/user-places/controllers/index.js',
+      'app/user-places/controllers/edit.js',
 
       'app/news/news.js',
 

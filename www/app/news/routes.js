@@ -5,7 +5,7 @@
 
     $stateProvider.state('app.news', {
       url: '/news',
-      templateUrl: 'app/news/views/news.html'
+      templateUrl: 'app/news/views/index.html'
     });
   });
 })();

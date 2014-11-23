@@ -1,0 +1,18 @@
+<ion-view title="Add Place" hide-nav-bar="true">
+  <div class="bar bar-header item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="search">
+    </label>
+    <button class="button button-small">
+      Submit
+    </button>
+  </div>
+  <ion-content has-header="true">
+    <div class="list">
+      <div class="item" ng-repeat="(key, value) in places.all">
+        {{value.title}}
+      </div>
+    </div>
+    <a ui-sref="app.userplaces.edit" class="button button-block button-assertive">Done</a>
+  </ion-content>
+</ion-view>

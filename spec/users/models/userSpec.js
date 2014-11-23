@@ -7,7 +7,7 @@
     beforeEach(function () {
       var mockPlaces = {
         getAll: function(){
-          return $q.when(testObjectives);
+          return $q.when(testPlaces);
         }
       };
 
@@ -63,15 +63,15 @@
         });
       });
 
-      describe("objectives", function(){
-        var userObjectives;
+      describe("places", function(){
+        var userPlaces;
 
         beforeEach(function(){
-          userObjectives = user.objectives;
+          userPlaces = user.places;
         });
 
-        it("has no objectives for a new user", function(){
-          var keys = Object.keys(userObjectives);
+        it("has no places for a new user", function(){
+          var keys = Object.keys(userPlaces);
           expect(keys.length).toEqual(0);
         });
 
@@ -80,14 +80,14 @@
           var id;
 
           beforeEach(function(){
-            user.addObjective('000_html').then(function(data){
-              keys = Object.keys(userObjectives);
+            user.addPlace('000_html').then(function(data){
+              keys = Object.keys(userPlaces);
               id = keys[0];
             });
             $rootScope.$digest();
           });
 
-          it("adds objectives", function(){
+          it("adds places", function(){
             expect(keys.length).toEqual(1);
           });
 
@@ -96,45 +96,45 @@
           });
 
           it("has the correct title", function(){
-            var title = userObjectives[id].title;
+            var title = userPlaces[id].title;
             expect(title).toEqual('HTML');
           });
 
           it("has a started data", function(){
-            var started = userObjectives[id].started;
+            var started = userPlaces[id].started;
             expect(started instanceof Date).toBeTruthy();
           });
 
           it("has a completed property that is set to false", function(){
-            var completed = userObjectives[id].completed;
+            var completed = userPlaces[id].completed;
             expect(completed).toBeFalsy();
           });
         });
 
         describe("remove", function(){
 
-          it("removes objectives", function(){
-            var keys = Object.keys(userObjectives);
+          it("removes places", function(){
+            var keys = Object.keys(userPlaces);
 
-            user.objectives['000_html'] = "bla";
+            user.places['000_html'] = "bla";
             expect(keys.length).toEqual(1);
 
-            user.removeObjective('000_html');
-            keys = Object.keys(userObjectives);
+            user.removePlace('000_html');
+            keys = Object.keys(userPlaces);
 
             expect(keys.length).toEqual(0);
           });
         });
 
-        describe("markObjectiveCompleted", function(){
-          it("marks objectives as completed", function(){
+        describe("markPlaceCompleted", function(){
+          it("marks places as completed", function(){
             var key = '000_html';
 
-            user.objectives[key] = {};
-            user.markObjectiveCompleted(key);
+            user.places[key] = {};
+            user.markPlaceCompleted(key);
 
-            var objective = userObjectives[key];
-            expect(objective.completed instanceof Date).toBeTruthy();
+            var place = userPlaces[key];
+            expect(place.completed instanceof Date).toBeTruthy();
 
           });
         });
@@ -142,7 +142,7 @@
     });
   });
 
-  var testObjectives = {
+  var testPlaces = {
     '000_html': {
       level: 0,
       title: "HTML"
@@ -178,6 +178,6 @@
   };
 
   testUser.profile = profile;
-  testUser.objectives = {};
+  testUser.places = {};
 
 })();

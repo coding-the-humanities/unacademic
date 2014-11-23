@@ -8,7 +8,7 @@
 
     vm.pageTitle = "Sign in";
     vm.user = session.user;
-    // console.log(JSON.stringify(generateUsers()));
+    console.log(JSON.stringify(generateUsers()));
 
     vm.signIn = function(){
       authentication.signIn();
@@ -23,7 +23,7 @@
 
       for(var i = 20; i < 40; i++){
         newUser.profile = generateProfile(i);
-        newUser.objectives = {};
+        newUser.places = {};
         user = new User(newUser);
         users[user.profile.id] = user;
       }

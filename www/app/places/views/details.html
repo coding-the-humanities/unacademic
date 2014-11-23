@@ -1,0 +1,34 @@
+<ion-view class="hide-tabs" title="{{place.title}}">
+
+  <ion-content>
+    <div class="list card">
+
+      <card-header title="{{place.title}}"
+                   color="light"
+                   logo="{{place.url}}">
+      </card-header>
+
+      <card-section title="Overview" color="{{place.color}}">
+        <div class="item item-text-wrap">
+          <h2>Level: {{ place.level }}</h2>
+          <progress value={{place.completion()}}
+            ng-class="{{place.color}}" max=100>
+          </progress>
+          <p>{{ place.description.summary }}</p>
+        </div>
+        </card-section>
+
+      <card-section title="Description" color="{{place.color}}">
+        <div class="item item-text-wrap">
+          <p>{{place.description.full }}</p>
+        </div>
+      </card-section>
+
+      <card-section title="Tasks" color="{{place.color}}">
+        <task-list color="{{place.color}}" tasks="place.tasks"></task-list>
+      </card-section>
+
+    </div>
+  </ion-content>
+
+</ion-view>
