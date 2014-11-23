@@ -8,7 +8,7 @@
 
     vm.pageTitle = "Sign in";
     vm.user = session.user;
-    console.log(JSON.stringify(generateUsers()));
+    // console.log(JSON.stringify(generateUsers()));
 
     vm.signIn = function(){
       authentication.signIn();

@@ -1,5 +1,7 @@
 (function() {
-  var app = angular.module('unacademic.places');
+  var app = angular.module('unacademic.models.place', [
+    'unacademic.models.task'
+  ]);
 
   app.service('Place', function(Task) {
     class Place {

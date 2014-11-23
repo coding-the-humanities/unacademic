@@ -5,15 +5,15 @@
 
     beforeEach(function () {
 
-      module("unacademic.places");
+      module("unacademic.places.controllers");
 
       inject(function ($rootScope, $controller, $q, _$timeout_) {
         $scope = $rootScope.$new();
         $timeout = _$timeout_;
 
         mockUser = {
-          addObjective: function(){},
-          removeObjective: function(){}
+          addPlace: function(){},
+          removePlace: function(){}
         };
 
         places = $controller("Add", {

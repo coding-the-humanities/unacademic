@@ -5,7 +5,7 @@
 
     beforeEach(function () {
 
-      module("unacademic.places");
+      module("unacademic.userplaces");
 
       inject(function ($rootScope, $controller, $q, _$timeout_) {
         $scope = $rootScope.$new();

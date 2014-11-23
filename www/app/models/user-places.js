@@ -1,6 +1,7 @@
 (function(){
 
   var app = angular.module('unacademic.models.userplaces', [
+    'unacademic.models.users',
     'unacademic.models.places'
   ]);
 

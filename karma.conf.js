@@ -23,27 +23,32 @@ module.exports = function(config) {
 
       'app/app.js',
 
+      'app/models/models.js',
+      'app/models/user.js',
+      'app/models/users.js',
+      'app/models/place.compiled.js',
+      'app/models/places.js',
+      'app/models/task.compiled.js',
+      'app/models/user-places.js',
+
       'app/authentication/authentication.js',
       'app/authentication/services/authentication.js',
       'app/authentication/controllers/signin.js',
 
       'app/users/users.js',
-      'app/users/models/users.js',
-      'app/users/models/user.js',
+      'app/users/controllers/controllers.js',
       'app/users/controllers/users.js',
       'app/users/controllers/profile.js',
 
 
       'app/places/places.js',
-      'app/places/models/place.compiled.js',
-      'app/places/models/places.js',
+      'app/places/controllers/controllers.js',
       'app/places/controllers/add.js',
-      'app/places/controllers/details.js',
 
       'app/user-places/user-places.js',
-      'app/user-places/models/user-places.js',
       'app/user-places/controllers/index.js',
       'app/user-places/controllers/edit.js',
+      'app/user-places/controllers/details.js',
 
       'app/news/news.js',
 
@@ -54,7 +59,6 @@ module.exports = function(config) {
       'app/tasks/tasks.js',
       'app/tasks/task-list.js',
       'app/tasks/task-item.js',
-      'app/tasks/task.compiled.js',
 
       '../spec/**/*Spec.js'
     ],

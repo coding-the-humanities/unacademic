@@ -13,7 +13,7 @@
     }
   }
 
-  var app = angular.module('unacademic.tasks');
+  var app = angular.module('unacademic.models.task', []);
   app.service('Task', function() {
     return Task;
   });

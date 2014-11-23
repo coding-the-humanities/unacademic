@@ -1,6 +1,8 @@
 (function(){
 
-  var app = angular.module('unacademic.users');
+  var app = angular.module('unacademic.models.users',[
+    'unacademic.models.user'
+  ]);
 
   app.service('users', function($q, $http, User){
 

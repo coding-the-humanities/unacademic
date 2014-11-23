@@ -11,7 +11,7 @@
         }
       };
 
-      module("unacademic.users", function($provide){
+      module("unacademic.models.user", function($provide){
         $provide.value('places', mockPlaces);
       });
 

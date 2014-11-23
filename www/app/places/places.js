@@ -2,7 +2,8 @@
 
   var app = angular.module('unacademic.places', [
     'templates',
-    'unacademic.tasks'
+    'unacademic.models.places',
+    'unacademic.tasks',
+    'unacademic.places.controllers'
   ]);
-
 })();

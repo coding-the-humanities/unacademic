@@ -1,6 +1,6 @@
 "use strict";
 (function() {
-  var app = angular.module('unacademic.places');
+  var app = angular.module('unacademic.models.place', ['unacademic.models.task']);
   app.service('Place', function(Task) {
     var Place = function Place($__1) {
       var $__2 = $__1,

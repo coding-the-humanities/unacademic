@@ -25,5 +25,23 @@
         }
       }
     });
+
+    $stateProvider.state('app.userplaces.detail', {
+      url: '/:placeId',
+      templateUrl: 'app/user-places/views/details.html',
+      controller: "Details as place",
+      resolve: {
+        place: function($stateParams, $q, userPlaces, session, Place){
+          var deferred = $q.defer();
+          var placeId = $stateParams.placeId;
+
+          userPlaces.get(session.user, placeId).then(function(data){
+            var place = new Place(data);
+            deferred.resolve(place);
+          });
+          return deferred.promise;
+        }
+      }
+    });
   });
 })();

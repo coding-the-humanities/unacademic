@@ -1,6 +1,8 @@
 (function(){
 
-  var app = angular.module('unacademic.places');
+  var app = angular.module('unacademic.models.places', [
+    'unacademic.models.place'
+  ]);
 
   app.service('places', function($http, $q, Place){
     return {

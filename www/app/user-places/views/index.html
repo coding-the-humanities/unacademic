@@ -11,7 +11,7 @@
         Level {{ key }}
         </ion-item>
         <ion-item class="item-icon-right" ng-repeat="place in value">
-          <div ui-sref="app.places.detail({placeId: place.id})">
+          <div ui-sref="app.userplaces.detail({placeId: place.id})">
             {{ place.title }}
           </div>
           <i ng-show="place.completed" class="icon ion-checkmark-round balanced"></i>

@@ -23,7 +23,7 @@
         }
       };
 
-      module("unacademic.users", function($provide){
+      module("unacademic.models.users", function($provide){
         $provide.value('User', MockUser);
       });
 

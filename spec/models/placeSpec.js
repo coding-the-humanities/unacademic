@@ -6,7 +6,7 @@
 
     beforeEach(function () {
 
-      module("unacademic.places");
+      module("unacademic.models.place");
 
       inject(function($injector){
         Place = $injector.get('Place');

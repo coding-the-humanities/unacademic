@@ -1,5 +1,5 @@
 (function(){
-  var app = angular.module('unacademic.users');
+  var app = angular.module('unacademic.users.controllers');
 
   app.controller('Profile', function(authentication, user, session){
 

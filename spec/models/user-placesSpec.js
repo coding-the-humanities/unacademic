@@ -6,7 +6,7 @@
 
     beforeEach(function () {
 
-      module("unacademic.userplaces", function($provide){
+      module("unacademic.models.userplaces", function($provide){
         $provide.value('users', mockUsers);
         $provide.value('places', mockPlaces);
       });

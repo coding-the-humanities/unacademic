@@ -6,7 +6,7 @@
 
     beforeEach(function () {
 
-      module("unacademic.tasks");
+      module("unacademic.models.task");
 
       inject(function($injector){
        Task = $injector.get('Task');
